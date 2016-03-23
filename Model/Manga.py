@@ -35,4 +35,4 @@ class Manga(Base):
         self.dessinateur = dessinateur
 
     def __str__(self):
-        return ("n° : {}; titre : {}; editeur : {};".format(self.id,self.titre,self.description))
+        return ("id : {};\ntitre : {};\ntomes : {}\npossede : {}\nlu : {}\ndescription : {}\ncouverture : {}\nprix : {}\ncommentaire : {}\nediteur : {};\nauteur : {}\ndessinateur : {}".format(self.id,self.titre,self.tomes,self.possede,self.lu,self.description,self.couverture,self.prix ,self.commentaire,self.editeur,self.auteur,self.dessinateur))

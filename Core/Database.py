@@ -40,8 +40,8 @@ class Database:
             self.session.delete(manga)
         self.session.commit()
 
-    def update (self, obj):
-        self.session.commit
+    def update (self):
+        self.session.commit()
 
     def retrieve(self,id = None):
         if id!= None:
@@ -74,19 +74,26 @@ if __name__ == "__main__":
         dessinateur = input("Dessinateur ?")
         db.create(titre, tomes, possede,lu, description, couverture, prix, commentaire, editeur, auteur, dessinateur)
     if action == 2:
-        pass
+        id = input("Id du manga a supprimer ?")
+        manga = db.retrieve(id)
+        if manga != None:
+            confirmation = bool(input("Voulez vous vraiment supprimer le manga {} ?".format(manga.titre)))
+            if confirmation == True:
+                db.delete(manga.id)
     if action == 3:
         id = input("Id du manga a modifier ?")
         manga = db.retrieve(id)
         if manga != None:
-            print(manga.titre)
-            titre = input("Titre ?")
-            tomes = input("Numéro du tome ?")
-            possede = input("Tome possédé ?")
-            description = input("Résumé ?")
-            couverture = input("Url de la couverture ?")
-            prix = input("Prix ?")
-            commentaire = input("Commentaire ?")
-            editeur = input("Editeur ?")
-            auteur = input("Auteur ?")
-            dessinateur = input("Dessinateur ?")
+            #print(manga.titre)
+            manga.titre = input("Titre ?") or manga.titre
+            manga.tomes = input("Numéro du tome ?") or manga.tomes
+            possede = bool(input("Tome possédé ?")) or manga.possede
+            description = bool(input("Résumé ?")) or manga.description
+            couverture = input("Url de la couverture ?") or manga.couverture
+            prix = input("Prix ?") or manga.prix
+            commentaire = input("Commentaire ?") or manga.commentaire
+            editeur = input("Editeur ?") or manga.editeur
+            auteur = input("Auteur ?") or manga.auteur
+            dessinateur = input("Dessinateur ?") or manga.dessinateur
+            db.update()
+            print(db.retrieve(manga.id))

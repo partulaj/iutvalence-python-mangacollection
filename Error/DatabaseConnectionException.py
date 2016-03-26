@@ -1,4 +1,4 @@
-class DatabaseConnectionError:
+class DatabaseConnectionException(BaseException):
 
     def __init__(self, mess):
         self.mess = mess

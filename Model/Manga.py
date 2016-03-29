@@ -1,38 +1,28 @@
-from numbers import Real
+from sqlalchemy import Column, Integer, String, ForeignKey
+from Core.Base import Base
 
-from sqlalchemy import Column, Integer, String, Float, Boolean
-from sqlalchemy.ext.declarative import declarative_base
-
-Base = declarative_base()
+Base = Base.getBase()
 
 class Manga(Base):
-    __tablename__ = "mangas"
+    __tablename__ = "manga"
     id = Column(Integer, primary_key=True)
     titre = Column(String, nullable=False)
-    tomes = Column(Integer, nullable=False)
-    possede = Column(Boolean, nullable=False)
-    lu = Column(Boolean, nullable=False)
     description = Column(String, nullable=True)
-    couverture = Column(String, nullable=True)
-    prix = Column(Float, nullable=True)
-    commentaire = Column(String, nullable=True)
-    editeur = Column(String, nullable=True)
-    auteur = Column(String, nullable=False)
-    dessinateur = Column(String, nullable=False)
+    editeur = Column(Integer, ForeignKey("editeur.id"), nullable=True)
+    scenariste = Column(Integer, ForeignKey("scenariste.id"), nullable=False)
+    dessinateur = Column(Integer, ForeignKey("dessinateur.id"), nullable=False)
+    statut = Column(Integer, ForeignKey("statut.id"), nullable=False)
+    genre = Column(Integer, ForeignKey("genre.id"), nullable=False)
 
-    def __init__(self,titre,tomes,possede,lu,description,couverture,prix,commentaire,editeur,auteur,dessinateur, id=None):
+    def __init__(self,titre,description,editeur,scenariste,dessinateur, statut, genre, id=None):
         self.id = id
         self.titre = titre
-        self.tomes = tomes
-        self.possede = possede
-        self.lu = lu
         self.description = description
-        self.couverture = couverture
-        self.prix = prix
-        self.commentaire = commentaire
         self.editeur = editeur
-        self.auteur = auteur
+        self.scenariste = scenariste
         self.dessinateur = dessinateur
+        self.statut = statut
+        self.genre = genre
 
     def __str__(self):
-        return ("id : {};\ntitre : {};\ntomes : {}\npossede : {}\nlu : {}\ndescription : {}\ncouverture : {}\nprix : {}\ncommentaire : {}\nediteur : {};\nauteur : {}\ndessinateur : {}".format(self.id,self.titre,self.tomes,self.possede,self.lu,self.description,self.couverture,self.prix ,self.commentaire,self.editeur,self.auteur,self.dessinateur))
+        return ("id : {};\ntitre : {};\n".format(self.id, self.titre))

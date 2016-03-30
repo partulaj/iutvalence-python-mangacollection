@@ -1,5 +1,4 @@
 from sqlalchemy import Column, Integer, String, Date, Boolean, Float, ForeignKey
-from sqlalchemy.ext.declarative import declarative_base
 from Core.Base import Base
 
 Base = Base.getBase()
@@ -28,4 +27,4 @@ class Tome(Base):
         self.couverture = couverture
 
     def __str__(self):
-        return ("id : {};\nediteur : {};\n".format(self.id, self.editeur))
+        return ("manga : {};\nnumero : {};\n".format(self.manga, self.numero))

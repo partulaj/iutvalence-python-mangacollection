@@ -1,7 +1,6 @@
 import os.path
-
+import csv
 from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 from Error.BadTypeException import BadTypeException
@@ -39,45 +38,55 @@ class Database:
             s = s + str(manga) + "\n"
         return s
 
+    def load(self, file):
+     with open('{}.csv'.format(file), 'r') as csvfile:
+         spamreader = csv.reader(csvfile, delimiter=';', quotechar='|')
+         for row in spamreader:
+             manga = Manga(row[0],row[1],row[2],row[3],row[4],row[5],row[6])
+             self.createManga(manga)
+
     def create(self, obj, type):
         if isinstance(obj, type):
             self.session.add(obj)
             self.session.commit()
             return obj
         else:
-            raise BadTypeException("Le type fournit n'est pas le type attendu, type attendu {}, type fournit {}".format(type, type(obj).__name__))
+            raise BadTypeException("Le type fournit n'est pas le type attendu")
 
     def createManga(self, manga):
-        if self.retrieve(Editeur, Editeur.editeur, manga.editeur) == None:
-            editeur = self.create(Editeur(manga.editeur), Editeur)
-            manga.editeur = editeur.id
-        else:
-            manga.editeur = self.retrieve(Editeur, Editeur.editeur, manga.editeur).id
+        if isinstance(manga, Manga):
+            if self.retrieve(Editeur, Editeur.editeur, manga.editeur) == None:
+                editeur = self.create(Editeur(manga.editeur), Editeur)
+                manga.editeur = editeur.id
+            else:
+                manga.editeur = self.retrieve(Editeur, Editeur.editeur, manga.editeur).id
 
-        if self.retrieve(Scenariste, Scenariste.scenariste, manga.scenariste) == None:
-            scenariste = self.create(Scenariste(manga.scenariste), Scenariste)
-            manga.scenariste = scenariste.id
-        else:
-            manga.scenariste = self.retrieve(Scenariste, Scenariste.scenariste, manga.scenariste).id
+            if self.retrieve(Scenariste, Scenariste.scenariste, manga.scenariste) == None:
+                scenariste = self.create(Scenariste(manga.scenariste), Scenariste)
+                manga.scenariste = scenariste.id
+            else:
+                manga.scenariste = self.retrieve(Scenariste, Scenariste.scenariste, manga.scenariste).id
 
-        if self.retrieve(Dessinateur, Dessinateur.dessinateur, manga.dessinateur) == None:
-            dessinateur = self.create(Dessinateur(manga.dessinateur), Dessinateur)
-            manga.dessinateur = dessinateur.id
-        else:
-            manga.dessinateur = self.retrieve(Dessinateur, Dessinateur.dessinateur, manga.dessinateur).id
+            if self.retrieve(Dessinateur, Dessinateur.dessinateur, manga.dessinateur) == None:
+                dessinateur = self.create(Dessinateur(manga.dessinateur), Dessinateur)
+                manga.dessinateur = dessinateur.id
+            else:
+                manga.dessinateur = self.retrieve(Dessinateur, Dessinateur.dessinateur, manga.dessinateur).id
 
-        if self.retrieve(Statut, Statut.statut, manga.statut) == None:
-            statut = self.create(Statut(manga.statut), Statut)
-            manga.statut = statut.id
-        else:
-            manga.statut = self.retrieve(Statut, Statut.statut, manga.statut).id
+            if self.retrieve(Statut, Statut.statut, manga.statut) == None:
+                statut = self.create(Statut(manga.statut), Statut)
+                manga.statut = statut.id
+            else:
+                manga.statut = self.retrieve(Statut, Statut.statut, manga.statut).id
 
-        if self.retrieve(Genre, Genre.genre, manga.genre) == None:
-            genre = self.create(Genre(manga.genre), Genre)
-            manga.genre = genre.id
+            if self.retrieve(Genre, Genre.genre, manga.genre) == None:
+                genre = self.create(Genre(manga.genre), Genre)
+                manga.genre = genre.id
+            else:
+                manga.genre = self.retrieve(Genre, Genre.genre, manga.genre).id
+            self.create(manga, Manga)
         else:
-            manga.genre = self.retrieve(Genre, Genre.genre, manga.genre).id
-        self.create(manga, Manga)
+            raise BadTypeException("Le type fournit n'est pas le type attendu, type attendu {}, type fournit {}".format(Manga, type(manga).__name__))
 
     def createTome(self, tome):
         if self.retrieve(Manga, Manga.id, tome.manga) != None:
@@ -92,16 +101,16 @@ class Database:
                 self.session.delete(obj)
             self.session.commit()
         else:
-            raise BadTypeException("Le type fournit n'est pas le type attendu, type attendu {}, type fournit {}".format(type, type(manga).__name__))
+            raise BadTypeException("Le type fournit n'est pas le type attendu")
 
-    def deleteTome(self, obj, manga, numero):
+    def deleteTome(self, obj):
         if isinstance(obj, Tome):
-            for obj in self.session.query(type).filter_by(manga = manga, numero = numero):
+            for obj in self.session.query(Tome).filter_by(manga = obj.manga, numero = obj.numero):
                 print(obj)
                 self.session.delete(obj)
             self.session.commit()
         else:
-            raise BadTypeException("Le type fournit n'est pas le type attendu, type attendu {}, type fournit {}".format(type, type(manga).__name__))
+            raise BadTypeException("Le type fournit n'est pas le type attendu, type attendu {}, type fournit {}".format(type, type(obj).__name__))
 
     def update (self):
         self.session.commit()
@@ -118,7 +127,7 @@ class Database:
 
     def retrieveTome(self, manga = None, numero = None):
         if manga!= None and numero!=None:
-            obj = self.session.query(type).filter_by(manga = manga, numero = numero).first()
+            obj = self.session.query(Tome).filter_by(manga = manga, numero = numero).first()
             if obj != None:
                 return obj
             return None

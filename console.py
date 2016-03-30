@@ -1,11 +1,13 @@
 from datetime import date, datetime
 
 from Core.Database import Database
+from Model.Commentaire import Commentaire
 from Model.Manga import Manga
 from Model.Tome import Tome
 
 if __name__ == "__main__":
     db = Database()
+    #db.load("import")
     boucle = True
     while(boucle):
         print("Mode console")
@@ -18,6 +20,7 @@ if __name__ == "__main__":
             print("Créer un objet")
             print("1 - Manga")
             print("2 - Tome")
+            print("3 - Commentaire")
             action = int(input("Quel objet souhaitez vous créer"))
             if action == 1:
                 titre = input("Titre ?")
@@ -49,30 +52,65 @@ if __name__ == "__main__":
                 couverture = input("Couverture du tome ?")
                 tome = Tome(manga, numero, date_parution, date_achat, possede, lu, a_acheter, prix,couverture)
                 db.createTome(tome)
+            if action == 3:
+                liste = db.retrieve(Manga)
+                for i in liste:
+                    print(i)
+                id  = input("Id manga ?")
+                titre  = input("Titre du commentaire manga ?")
+                commentaire  = input("Commentaire sur le manga ?")
+                comment = Commentaire(id,titre,commentaire)
+                db.create(comment, Commentaire)
+
         if action == 2:
-            id = input("Id du manga a supprimer ?")
-            manga = db.retrieve(Manga, Manga.id, id)
-            if manga != None:
-                confirmation = bool(input("Voulez vous vraiment supprimer le manga {} ?".format(manga.titre)))
-                if confirmation == True:
-                    db.delete(manga, Manga)
+            print("Choisissez ce que vous voulez supprimer ?")
+            print("1 - Manga")
+            print("2 - Tome")
+            action = int(input("Choix ?"))
+            if action == 1:
+                id = input("Id du manga a supprimer ?")
+                manga = db.retrieve(Manga, Manga.id, id)
+                if manga != None:
+                    confirmation = bool(input("Voulez vous vraiment supprimer le manga {}, tous les tomes associé seront supprimés ?".format(manga.titre)))
+                    if confirmation == True:
+                        db.delete(manga, Manga)
+            if action == 2 :
+                manga = input("Id de la serie ?")
+                numero = input("Numéro du tome ?")
+                tome = db.retrieveTome(manga,numero)
+                if tome != None:
+                    nom = db.retrieve(Manga, Manga.id, manga).titre
+                    confirmation = bool(input("Voulez vous vraiment supprimer le tome {} de {} ?".format(numero, nom)))
+                    if confirmation == True:
+                        db.deleteTome(tome)
+
+            if action == 3:
+                action = None
+                liste = db.retrieve(Manga)
+                for i in liste:
+                    print(i)
+                id  = input("Id manga ?")
+                commentaire = db.retrieve(Commentaire, Commentaire.id, id)
+                if commentaire != None:
+                    nom = db.retrieve(Manga, Manga.id, id).titre
+                    confirmation = bool(input("Voulez vous vraiment supprimer le commentaire sur le manga {} ?".format(nom)))
+                    if confirmation == True:
+                        db.delete(commentaire, Commentaire)
+
         if action == 3:
             id = input("Id du manga a modifier ?")
             manga = db.retrieve(Manga, Manga.id, id)
             if manga != None:
                 #print(manga.titre)
                 manga.titre = input("Titre ?") or manga.titre
-                manga.tomes = input("Numéro du tome ?") or manga.tomes
-                possede = bool(input("Tome possédé ?")) or manga.possede
-                description = bool(input("Résumé ?")) or manga.description
-                couverture = input("Url de la couverture ?") or manga.couverture
-                prix = input("Prix ?") or manga.prix
-                commentaire = input("Commentaire ?") or manga.commentaire
-                editeur = input("Editeur ?") or manga.editeur
-                auteur = input("Auteur ?") or manga.auteur
-                dessinateur = input("Dessinateur ?") or manga.dessinateur
+                manga.description = bool(input("Résumé ?")) or manga.description
+                manga.editeur = input("Editeur ?") or manga.editeur
+                manga.scenariste = input("Scenariste ?") or manga.scenariste
+                manga.dessinateur = input("Dessinateur ?") or manga.dessinateur
+                manga.statut = input("Statut ?") or manga.statut
+                manga.genre = input("Genre ?") or manga.genre
                 db.update()
-                print(db.retrieve(Manga))
+                print(db.retrieve(Manga, Manga.id, manga.id))
 
         if action == 4:
             boucle = False

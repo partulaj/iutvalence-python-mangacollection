@@ -15,7 +15,7 @@ class Tome(Base):
     prix = Column(Float, nullable=False)
     couverture = Column(String,nullable=True)
 
-    def __init__(self,manga,numero,date_parution,date_achat,possede,lu,a_acheter,prix,couverture):
+    def __init__(self,manga,numero,date_parution,possede,lu,a_acheter,prix,couverture,date_achat = None):
         self.manga = manga
         self.numero = numero
         self.date_parution = date_parution

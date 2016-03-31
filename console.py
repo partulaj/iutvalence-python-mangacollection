@@ -7,7 +7,8 @@ from Model.Tome import Tome
 
 if __name__ == "__main__":
     db = Database()
-    #db.load("import")
+    #db.loadManga("import")
+    #db.loadTome("importTomes")
     boucle = True
     while(boucle):
         print("Mode console")

@@ -1,5 +1,7 @@
 import os.path
 import csv
+from datetime import datetime
+
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
@@ -38,12 +40,21 @@ class Database:
             s = s + str(manga) + "\n"
         return s
 
-    def load(self, file):
+    def loadManga(self, file):
      with open('{}.csv'.format(file), 'r') as csvfile:
          spamreader = csv.reader(csvfile, delimiter=';', quotechar='|')
          for row in spamreader:
-             manga = Manga(row[0],row[1],row[2],row[3],row[4],row[5],row[6])
+             manga = Manga(row[0],row[1],row[2],row[3],row[4],row[5],row[6],row[7] or None)
              self.createManga(manga)
+
+    def loadTome(self, file):
+     with open('{}.csv'.format(file), 'r') as csvfile:
+         spamreader = csv.reader(csvfile, delimiter=';', quotechar='|')
+         for row in spamreader:
+             print(row[2])
+             date_parution = datetime.strptime(row[2], "%d-%m-%Y").date()
+             tome = Tome(row[0],row[1],date_parution,row[3],row[4],row[5],row[6],row[7])
+             self.createTome(tome)
 
     def create(self, obj, type):
         if isinstance(obj, type):

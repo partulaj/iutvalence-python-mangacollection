@@ -143,12 +143,12 @@ class Database:
                 return obj
             return None
         elif manga!=None and numero==None:
-            obj = self.session.query(type).filter_by(manga = manga).all()
+            obj = self.session.query(Tome).filter_by(manga = manga).all()
             if obj != None:
                 return obj
             return None
         elif manga==None and numero!=None:
-            obj = self.session.query(type).filter_by(numero = numero).all()
+            obj = self.session.query(Tome).filter_by(numero = numero).all()
             if obj != None:
                 return obj
             return None

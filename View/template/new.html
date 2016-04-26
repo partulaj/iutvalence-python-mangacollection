@@ -1,0 +1,32 @@
+<%inherit file="base.html" />
+<%block name="container">
+<form>
+    <input type="text" name="manga">
+    <textarea name="description"></textarea>
+    <select name="scenariste">
+        %for scenariste in scenaristes:
+        <option value="${scenariste.id}">${scenariste.scenariste}</option>
+        %endfor
+    </select>
+    <select name="dessinateur">
+        %for dessinateur in dessinateurs:
+        <option value="${dessinateur.id}">${dessinateur.dessinateur}</option>
+        %endfor
+    </select>
+    <select name="editeur">
+        %for editeur in editeurs:
+        <option value="${editeur.id}">${editeur.editeur}</option>
+        %endfor
+    </select>
+    <select name="statut">
+        %for statut in statuts:
+        <option value="${statut.id}">${statut.statut}</option>
+        %endfor
+    </select>
+    <select name="genre">
+        %for genre in genres:
+        <option value="${genre.id}">${genre.genre}</option>
+        %endfor
+    </select>
+</form>
+</%block>

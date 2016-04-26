@@ -1,0 +1,510 @@
+[08/Apr/2016:14:44:28] ENGINE Listening for SIGTERM.
+[08/Apr/2016:14:44:28] ENGINE Bus STARTING
+[08/Apr/2016:14:44:28] ENGINE Started monitor thread '_TimeoutMonitor'.
+[08/Apr/2016:14:44:29] ENGINE Serving on http://127.0.0.1:8080
+[08/Apr/2016:14:44:29] ENGINE Bus STARTED
+[16/Apr/2016:14:03:18] ENGINE Listening for SIGTERM.
+[16/Apr/2016:14:03:18] ENGINE Bus STARTING
+[16/Apr/2016:14:03:18] ENGINE Started monitor thread '_TimeoutMonitor'.
+[16/Apr/2016:14:03:18] ENGINE Serving on http://127.0.0.1:8080
+[16/Apr/2016:14:03:18] ENGINE Bus STARTED
+[16/Apr/2016:14:04:04] ENGINE Listening for SIGTERM.
+[16/Apr/2016:14:04:04] ENGINE Bus STARTING
+[16/Apr/2016:14:04:04] ENGINE Started monitor thread '_TimeoutMonitor'.
+[16/Apr/2016:14:04:04] ENGINE Serving on http://127.0.0.1:8080
+[16/Apr/2016:14:04:04] ENGINE Bus STARTED
+[22/Apr/2016:18:58:11] ENGINE Listening for SIGTERM.
+[22/Apr/2016:18:58:11] ENGINE Bus STARTING
+[22/Apr/2016:18:58:11] ENGINE Started monitor thread '_TimeoutMonitor'.
+[22/Apr/2016:18:58:12] ENGINE Serving on http://127.0.0.1:8080
+[22/Apr/2016:18:58:12] ENGINE Bus STARTED
+[22/Apr/2016:18:58:15] HTTP 
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\sqlalchemy\engine\base.py", line 1139, in _execute_context
+    context)
+  File "C:\Program Files\Python\lib\site-packages\sqlalchemy\engine\default.py", line 450, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: Mangas
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cprequest.py", line 670, in respond
+    response.body = self.handler()
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\lib\encoding.py", line 217, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 60, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/server.py", line 49, in index
+    return _page.render_unicode(mangas = db.retrieve('Mangas'))
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\Core\Database.py", line 136, in retrieve
+    obj = self.session.query(type).all()
+  File "C:\Program Files\Python\lib\site-packages\sqlalchemy\orm\query.py", line 2588, in all
+    return list(self)
+  File "C:\Program Files\Python\lib\site-packages\sqlalchemy\orm\query.py", line 2736, in __iter__
+    return self._execute_and_instances(context)
+  File "C:\Program Files\Python\lib\site-packages\sqlalchemy\orm\query.py", line 2751, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "C:\Program Files\Python\lib\site-packages\sqlalchemy\engine\base.py", line 914, in execute
+    return meth(self, multiparams, params)
+  File "C:\Program Files\Python\lib\site-packages\sqlalchemy\sql\elements.py", line 323, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Program Files\Python\lib\site-packages\sqlalchemy\engine\base.py", line 1010, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "C:\Program Files\Python\lib\site-packages\sqlalchemy\engine\base.py", line 1146, in _execute_context
+    context)
+  File "C:\Program Files\Python\lib\site-packages\sqlalchemy\engine\base.py", line 1341, in _handle_dbapi_exception
+    exc_info
+  File "C:\Program Files\Python\lib\site-packages\sqlalchemy\util\compat.py", line 200, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "C:\Program Files\Python\lib\site-packages\sqlalchemy\util\compat.py", line 183, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Program Files\Python\lib\site-packages\sqlalchemy\engine\base.py", line 1139, in _execute_context
+    context)
+  File "C:\Program Files\Python\lib\site-packages\sqlalchemy\engine\default.py", line 450, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: Mangas [SQL: 'SELECT Mangas']
+[22/Apr/2016:18:59:51] ENGINE Listening for SIGTERM.
+[22/Apr/2016:18:59:51] ENGINE Bus STARTING
+[22/Apr/2016:18:59:51] ENGINE Started monitor thread '_TimeoutMonitor'.
+[22/Apr/2016:18:59:51] ENGINE Serving on http://127.0.0.1:8080
+[22/Apr/2016:18:59:51] ENGINE Bus STARTED
+[22/Apr/2016:20:01:21] ENGINE Listening for SIGTERM.
+[22/Apr/2016:20:01:21] ENGINE Bus STARTING
+[22/Apr/2016:20:01:21] ENGINE Started monitor thread '_TimeoutMonitor'.
+[22/Apr/2016:20:01:21] ENGINE Serving on http://127.0.0.1:8080
+[22/Apr/2016:20:01:21] ENGINE Bus STARTED
+[22/Apr/2016:20:02:03] ENGINE Listening for SIGTERM.
+[22/Apr/2016:20:02:03] ENGINE Bus STARTING
+[22/Apr/2016:20:02:03] ENGINE Started monitor thread '_TimeoutMonitor'.
+[22/Apr/2016:20:02:03] ENGINE Serving on http://127.0.0.1:8080
+[22/Apr/2016:20:02:03] ENGINE Bus STARTED
+[22/Apr/2016:20:02:52] ENGINE Listening for SIGTERM.
+[22/Apr/2016:20:02:52] ENGINE Bus STARTING
+[22/Apr/2016:20:02:52] ENGINE Started monitor thread '_TimeoutMonitor'.
+[22/Apr/2016:20:02:52] ENGINE Serving on http://127.0.0.1:8080
+[22/Apr/2016:20:02:52] ENGINE Bus STARTED
+[22/Apr/2016:20:07:50] ENGINE Listening for SIGTERM.
+[22/Apr/2016:20:07:50] ENGINE Bus STARTING
+[22/Apr/2016:20:07:50] ENGINE Started monitor thread '_TimeoutMonitor'.
+[22/Apr/2016:20:07:51] ENGINE Serving on http://127.0.0.1:8080
+[22/Apr/2016:20:07:51] ENGINE Bus STARTED
+[22/Apr/2016:20:35:49] ENGINE Listening for SIGTERM.
+[22/Apr/2016:20:35:49] ENGINE Bus STARTING
+[22/Apr/2016:20:35:49] ENGINE Started monitor thread '_TimeoutMonitor'.
+[22/Apr/2016:20:35:49] ENGINE Serving on http://127.0.0.1:8080
+[22/Apr/2016:20:35:49] ENGINE Bus STARTED
+[22/Apr/2016:20:38:14] ENGINE Listening for SIGTERM.
+[22/Apr/2016:20:38:14] ENGINE Bus STARTING
+[22/Apr/2016:20:38:14] ENGINE Started monitor thread '_TimeoutMonitor'.
+[22/Apr/2016:20:38:14] ENGINE Serving on http://127.0.0.1:8080
+[22/Apr/2016:20:38:14] ENGINE Bus STARTED
+[22/Apr/2016:20:45:47] ENGINE Listening for SIGTERM.
+[22/Apr/2016:20:45:47] ENGINE Bus STARTING
+[22/Apr/2016:20:45:47] ENGINE Started monitor thread '_TimeoutMonitor'.
+[22/Apr/2016:20:45:47] ENGINE Serving on http://127.0.0.1:8080
+[22/Apr/2016:20:45:47] ENGINE Bus STARTED
+[22/Apr/2016:20:46:30] ENGINE Listening for SIGTERM.
+[22/Apr/2016:20:46:30] ENGINE Bus STARTING
+[22/Apr/2016:20:46:30] ENGINE Started monitor thread '_TimeoutMonitor'.
+[22/Apr/2016:20:46:30] ENGINE Serving on http://127.0.0.1:8080
+[22/Apr/2016:20:46:30] ENGINE Bus STARTED
+[22/Apr/2016:20:46:31] HTTP 
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\inspect.py", line 977, in getfullargspec
+    skip_bound_arg=False)
+  File "C:\Program Files\Python\lib\inspect.py", line 1898, in _signature_internal
+    raise TypeError('{!r} is not a callable object'.format(obj))
+TypeError: <__main__.Home object at 0x00000000044217F0> is not a callable object
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 64, in __call__
+    test_callable_spec(self.callable, self.args, self.kwargs)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 95, in test_callable_spec
+    (args, varargs, varkw, defaults) = getargspec(callable)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 212, in getargspec
+    return inspect.getfullargspec(callable)[:4]
+  File "C:\Program Files\Python\lib\inspect.py", line 983, in getfullargspec
+    raise TypeError('unsupported callable') from ex
+TypeError: unsupported callable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cprequest.py", line 670, in respond
+    response.body = self.handler()
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\lib\encoding.py", line 217, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 68, in __call__
+    raise x
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 60, in __call__
+    return self.callable(*self.args, **self.kwargs)
+TypeError: 'Home' object is not callable
+[22/Apr/2016:20:46:34] HTTP 
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\inspect.py", line 977, in getfullargspec
+    skip_bound_arg=False)
+  File "C:\Program Files\Python\lib\inspect.py", line 1898, in _signature_internal
+    raise TypeError('{!r} is not a callable object'.format(obj))
+TypeError: <__main__.Home object at 0x00000000044217F0> is not a callable object
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 64, in __call__
+    test_callable_spec(self.callable, self.args, self.kwargs)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 95, in test_callable_spec
+    (args, varargs, varkw, defaults) = getargspec(callable)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 212, in getargspec
+    return inspect.getfullargspec(callable)[:4]
+  File "C:\Program Files\Python\lib\inspect.py", line 983, in getfullargspec
+    raise TypeError('unsupported callable') from ex
+TypeError: unsupported callable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cprequest.py", line 670, in respond
+    response.body = self.handler()
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\lib\encoding.py", line 217, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 68, in __call__
+    raise x
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 60, in __call__
+    return self.callable(*self.args, **self.kwargs)
+TypeError: 'Home' object is not callable
+[22/Apr/2016:20:47:06] ENGINE Listening for SIGTERM.
+[22/Apr/2016:20:47:06] ENGINE Bus STARTING
+[22/Apr/2016:20:47:06] ENGINE Started monitor thread '_TimeoutMonitor'.
+[22/Apr/2016:20:47:07] ENGINE Serving on http://127.0.0.1:8080
+[22/Apr/2016:20:47:07] ENGINE Bus STARTED
+[22/Apr/2016:20:47:45] ENGINE Listening for SIGTERM.
+[22/Apr/2016:20:47:45] ENGINE Bus STARTING
+[22/Apr/2016:20:47:45] ENGINE Started monitor thread '_TimeoutMonitor'.
+[22/Apr/2016:20:47:45] ENGINE Serving on http://127.0.0.1:8080
+[22/Apr/2016:20:47:45] ENGINE Bus STARTED
+[22/Apr/2016:20:48:09] ENGINE Listening for SIGTERM.
+[22/Apr/2016:20:48:09] ENGINE Bus STARTING
+[22/Apr/2016:20:48:09] ENGINE Started monitor thread '_TimeoutMonitor'.
+[22/Apr/2016:20:48:09] ENGINE Serving on http://127.0.0.1:8080
+[22/Apr/2016:20:48:09] ENGINE Bus STARTED
+[22/Apr/2016:20:48:55] ENGINE Listening for SIGTERM.
+[22/Apr/2016:20:48:55] ENGINE Bus STARTING
+[22/Apr/2016:20:48:55] ENGINE Started monitor thread '_TimeoutMonitor'.
+[22/Apr/2016:20:48:55] ENGINE Serving on http://127.0.0.1:8080
+[22/Apr/2016:20:48:55] ENGINE Bus STARTED
+[22/Apr/2016:20:48:58] HTTP 
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cprequest.py", line 670, in respond
+    response.body = self.handler()
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\lib\encoding.py", line 217, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 60, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/server.py", line 58, in detail
+    return _detail.render_unicode(manga = db.retrieve(Manga,'id',id) ,tomes = db.retrieveTome(id))
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\Core\Database.py", line 146, in retrieveTome
+    obj = self.session.query(type).filter_by(manga = manga).all()
+  File "C:\Program Files\Python\lib\site-packages\sqlalchemy\orm\session.py", line 1260, in query
+    return self._query_cls(entities, self, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\sqlalchemy\orm\query.py", line 110, in __init__
+    self._set_entities(entities)
+  File "C:\Program Files\Python\lib\site-packages\sqlalchemy\orm\query.py", line 118, in _set_entities
+    entity_wrapper(self, ent)
+  File "C:\Program Files\Python\lib\site-packages\sqlalchemy\orm\query.py", line 3804, in __init__
+    "expected - got '%r'" % (column, )
+sqlalchemy.exc.InvalidRequestError: SQL expression, column, or mapped entity expected - got '<class 'type'>'
+[22/Apr/2016:20:48:59] HTTP 
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cprequest.py", line 670, in respond
+    response.body = self.handler()
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\lib\encoding.py", line 217, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 60, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/server.py", line 58, in detail
+    return _detail.render_unicode(manga = db.retrieve(Manga,'id',id) ,tomes = db.retrieveTome(id))
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\Core\Database.py", line 146, in retrieveTome
+    obj = self.session.query(type).filter_by(manga = manga).all()
+  File "C:\Program Files\Python\lib\site-packages\sqlalchemy\orm\session.py", line 1260, in query
+    return self._query_cls(entities, self, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\sqlalchemy\orm\query.py", line 110, in __init__
+    self._set_entities(entities)
+  File "C:\Program Files\Python\lib\site-packages\sqlalchemy\orm\query.py", line 118, in _set_entities
+    entity_wrapper(self, ent)
+  File "C:\Program Files\Python\lib\site-packages\sqlalchemy\orm\query.py", line 3804, in __init__
+    "expected - got '%r'" % (column, )
+sqlalchemy.exc.InvalidRequestError: SQL expression, column, or mapped entity expected - got '<class 'type'>'
+[22/Apr/2016:20:53:18] ENGINE Listening for SIGTERM.
+[22/Apr/2016:20:53:18] ENGINE Bus STARTING
+[22/Apr/2016:20:53:18] ENGINE Started monitor thread '_TimeoutMonitor'.
+[22/Apr/2016:20:53:18] ENGINE Serving on http://127.0.0.1:8080
+[22/Apr/2016:20:53:18] ENGINE Bus STARTED
+[22/Apr/2016:20:53:24] HTTP 
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cprequest.py", line 670, in respond
+    response.body = self.handler()
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\lib\encoding.py", line 217, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 60, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/server.py", line 59, in detail
+    return _detail.render_unicode(manga = db.retrieve(Manga,'id',id) ,tomes = db.retrieveTome(id))
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\Core\Database.py", line 146, in retrieveTome
+    obj = self.session.query(type).filter_by(manga = manga).all()
+  File "C:\Program Files\Python\lib\site-packages\sqlalchemy\orm\session.py", line 1260, in query
+    return self._query_cls(entities, self, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\sqlalchemy\orm\query.py", line 110, in __init__
+    self._set_entities(entities)
+  File "C:\Program Files\Python\lib\site-packages\sqlalchemy\orm\query.py", line 118, in _set_entities
+    entity_wrapper(self, ent)
+  File "C:\Program Files\Python\lib\site-packages\sqlalchemy\orm\query.py", line 3804, in __init__
+    "expected - got '%r'" % (column, )
+sqlalchemy.exc.InvalidRequestError: SQL expression, column, or mapped entity expected - got '<class 'type'>'
+[22/Apr/2016:20:55:41] ENGINE Listening for SIGTERM.
+[22/Apr/2016:20:55:41] ENGINE Bus STARTING
+[22/Apr/2016:20:55:41] ENGINE Started monitor thread '_TimeoutMonitor'.
+[22/Apr/2016:20:55:42] ENGINE Serving on http://127.0.0.1:8080
+[22/Apr/2016:20:55:42] ENGINE Bus STARTED
+[22/Apr/2016:20:57:22] ENGINE Listening for SIGTERM.
+[22/Apr/2016:20:57:22] ENGINE Bus STARTING
+[22/Apr/2016:20:57:22] ENGINE Started monitor thread '_TimeoutMonitor'.
+[22/Apr/2016:20:57:22] ENGINE Serving on http://127.0.0.1:8080
+[22/Apr/2016:20:57:22] ENGINE Bus STARTED
+[22/Apr/2016:20:57:25] HTTP 
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cprequest.py", line 670, in respond
+    response.body = self.handler()
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\lib\encoding.py", line 217, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 60, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/server.py", line 59, in detail
+    return _detail.render_unicode(manga = db.retrieve(Manga,'id',id) ,tomes = db.retrieveTome(id))
+  File "C:\Program Files\Python\lib\site-packages\mako\template.py", line 454, in render_unicode
+    as_unicode=True)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 829, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 864, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 890, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\detail.html.py", line 23, in render_body
+    __M_writer(str(manga.titre))
+AttributeError: 'NoneType' object has no attribute 'titre'
+[22/Apr/2016:20:57:26] HTTP 
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cprequest.py", line 670, in respond
+    response.body = self.handler()
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\lib\encoding.py", line 217, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 60, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/server.py", line 59, in detail
+    return _detail.render_unicode(manga = db.retrieve(Manga,'id',id) ,tomes = db.retrieveTome(id))
+  File "C:\Program Files\Python\lib\site-packages\mako\template.py", line 454, in render_unicode
+    as_unicode=True)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 829, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 864, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 890, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\detail.html.py", line 23, in render_body
+    __M_writer(str(manga.titre))
+AttributeError: 'NoneType' object has no attribute 'titre'
+[22/Apr/2016:20:59:40] ENGINE Listening for SIGTERM.
+[22/Apr/2016:20:59:40] ENGINE Bus STARTING
+[22/Apr/2016:20:59:40] ENGINE Started monitor thread '_TimeoutMonitor'.
+[22/Apr/2016:20:59:40] ENGINE Serving on http://127.0.0.1:8080
+[22/Apr/2016:20:59:40] ENGINE Bus STARTED
+[22/Apr/2016:21:01:03] ENGINE Listening for SIGTERM.
+[22/Apr/2016:21:01:03] ENGINE Bus STARTING
+[22/Apr/2016:21:01:03] ENGINE Started monitor thread '_TimeoutMonitor'.
+[22/Apr/2016:21:01:03] ENGINE Serving on http://127.0.0.1:8080
+[22/Apr/2016:21:01:03] ENGINE Bus STARTED
+[22/Apr/2016:21:04:06] ENGINE Listening for SIGTERM.
+[22/Apr/2016:21:04:06] ENGINE Bus STARTING
+[22/Apr/2016:21:04:06] ENGINE Started monitor thread '_TimeoutMonitor'.
+[22/Apr/2016:21:04:06] ENGINE Serving on http://127.0.0.1:8080
+[22/Apr/2016:21:04:06] ENGINE Bus STARTED
+[22/Apr/2016:21:04:24] ENGINE Listening for SIGTERM.
+[22/Apr/2016:21:04:24] ENGINE Bus STARTING
+[22/Apr/2016:21:04:24] ENGINE Started monitor thread '_TimeoutMonitor'.
+[22/Apr/2016:21:04:24] ENGINE Serving on http://127.0.0.1:8080
+[22/Apr/2016:21:04:24] ENGINE Bus STARTED
+[23/Apr/2016:11:09:01] ENGINE Listening for SIGTERM.
+[23/Apr/2016:11:09:01] ENGINE Bus STARTING
+[23/Apr/2016:11:09:01] ENGINE Started monitor thread '_TimeoutMonitor'.
+[23/Apr/2016:11:09:01] ENGINE Serving on http://127.0.0.1:8080
+[23/Apr/2016:11:09:01] ENGINE Bus STARTED
+[23/Apr/2016:11:16:55] ENGINE Listening for SIGTERM.
+[23/Apr/2016:11:16:55] ENGINE Bus STARTING
+[23/Apr/2016:11:16:55] ENGINE Started monitor thread '_TimeoutMonitor'.
+[23/Apr/2016:11:16:56] ENGINE Serving on http://127.0.0.1:8080
+[23/Apr/2016:11:16:56] ENGINE Bus STARTED
+[23/Apr/2016:11:17:17] ENGINE Listening for SIGTERM.
+[23/Apr/2016:11:17:17] ENGINE Bus STARTING
+[23/Apr/2016:11:17:17] ENGINE Started monitor thread '_TimeoutMonitor'.
+[23/Apr/2016:11:17:18] ENGINE Serving on http://127.0.0.1:8080
+[23/Apr/2016:11:17:18] ENGINE Bus STARTED
+[26/Apr/2016:15:10:36] ENGINE Listening for SIGTERM.
+[26/Apr/2016:15:10:36] ENGINE Bus STARTING
+[26/Apr/2016:15:10:36] ENGINE Started monitor thread '_TimeoutMonitor'.
+[26/Apr/2016:15:10:36] ENGINE Serving on http://127.0.0.1:8080
+[26/Apr/2016:15:10:36] ENGINE Bus STARTED
+[26/Apr/2016:15:11:18] ENGINE Listening for SIGTERM.
+[26/Apr/2016:15:11:18] ENGINE Bus STARTING
+[26/Apr/2016:15:11:18] ENGINE Started monitor thread '_TimeoutMonitor'.
+[26/Apr/2016:15:11:19] ENGINE Serving on http://127.0.0.1:8080
+[26/Apr/2016:15:11:19] ENGINE Bus STARTED
+[26/Apr/2016:15:12:35] ENGINE Listening for SIGTERM.
+[26/Apr/2016:15:12:35] ENGINE Bus STARTING
+[26/Apr/2016:15:12:35] ENGINE Started monitor thread '_TimeoutMonitor'.
+[26/Apr/2016:15:12:35] ENGINE Serving on http://127.0.0.1:8080
+[26/Apr/2016:15:12:35] ENGINE Bus STARTED
+[26/Apr/2016:15:37:56] ENGINE Listening for SIGTERM.
+[26/Apr/2016:15:37:56] ENGINE Bus STARTING
+[26/Apr/2016:15:37:56] ENGINE Started monitor thread '_TimeoutMonitor'.
+[26/Apr/2016:15:37:56] ENGINE Serving on http://127.0.0.1:8080
+[26/Apr/2016:15:37:56] ENGINE Bus STARTED
+[26/Apr/2016:15:38:33] ENGINE Listening for SIGTERM.
+[26/Apr/2016:15:38:33] ENGINE Bus STARTING
+[26/Apr/2016:15:38:33] ENGINE Started monitor thread '_TimeoutMonitor'.
+[26/Apr/2016:15:38:33] ENGINE Serving on http://127.0.0.1:8080
+[26/Apr/2016:15:38:33] ENGINE Bus STARTED
+[26/Apr/2016:15:39:51] ENGINE Listening for SIGTERM.
+[26/Apr/2016:15:39:51] ENGINE Bus STARTING
+[26/Apr/2016:15:39:51] ENGINE Started monitor thread '_TimeoutMonitor'.
+[26/Apr/2016:15:39:52] ENGINE Serving on http://127.0.0.1:8080
+[26/Apr/2016:15:39:52] ENGINE Bus STARTED
+[26/Apr/2016:15:39:58] HTTP 
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cprequest.py", line 670, in respond
+    response.body = self.handler()
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\lib\encoding.py", line 217, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 60, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/server.py", line 64, in new
+    return _new.renderunicode()
+AttributeError: 'Template' object has no attribute 'renderunicode'
+[26/Apr/2016:15:40:23] ENGINE Listening for SIGTERM.
+[26/Apr/2016:15:40:23] ENGINE Bus STARTING
+[26/Apr/2016:15:40:23] ENGINE Started monitor thread '_TimeoutMonitor'.
+[26/Apr/2016:15:40:23] ENGINE Serving on http://127.0.0.1:8080
+[26/Apr/2016:15:40:23] ENGINE Bus STARTED
+[26/Apr/2016:15:40:25] HTTP 
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\mako\lookup.py", line 245, in get_template
+    return self._check(uri, self._collection[uri])
+KeyError: 'base.mako.html'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 793, in _lookup_template
+    return lookup.get_template(uri)
+  File "C:\Program Files\Python\lib\site-packages\mako\lookup.py", line 259, in get_template
+    "Cant locate template for uri %r" % uri)
+mako.exceptions.TopLevelLookupException: Cant locate template for uri 'base.mako.html'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cprequest.py", line 670, in respond
+    response.body = self.handler()
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\lib\encoding.py", line 217, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 60, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/server.py", line 64, in new
+    return _new.render_unicode()
+  File "C:\Program Files\Python\lib\site-packages\mako\template.py", line 454, in render_unicode
+    as_unicode=True)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 829, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 863, in _render_context
+    (inherit, lclcontext) = _populate_self_namespace(context, tmpl)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 805, in _populate_self_namespace
+    ret = template.module._mako_inherit(template, context)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\new.html.py", line 26, in _mako_inherit
+    return runtime._inherit_from(context, 'base.mako.html', _template_uri)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 762, in _inherit_from
+    template = _lookup_template(context, uri, calling_uri)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 795, in _lookup_template
+    raise exceptions.TemplateLookupException(str(compat.exception_as()))
+mako.exceptions.TemplateLookupException: Cant locate template for uri 'base.mako.html'
+[26/Apr/2016:15:40:40] ENGINE Listening for SIGTERM.
+[26/Apr/2016:15:40:40] ENGINE Bus STARTING
+[26/Apr/2016:15:40:40] ENGINE Started monitor thread '_TimeoutMonitor'.
+[26/Apr/2016:15:40:40] ENGINE Serving on http://127.0.0.1:8080
+[26/Apr/2016:15:40:40] ENGINE Bus STARTED
+[26/Apr/2016:16:03:03] ENGINE Listening for SIGTERM.
+[26/Apr/2016:16:03:03] ENGINE Bus STARTING
+[26/Apr/2016:16:03:03] ENGINE Started monitor thread '_TimeoutMonitor'.
+[26/Apr/2016:16:03:03] ENGINE Serving on http://127.0.0.1:8080
+[26/Apr/2016:16:03:03] ENGINE Bus STARTED
+[26/Apr/2016:16:05:30] ENGINE Listening for SIGTERM.
+[26/Apr/2016:16:05:30] ENGINE Bus STARTING
+[26/Apr/2016:16:05:30] ENGINE Started monitor thread '_TimeoutMonitor'.
+[26/Apr/2016:16:05:30] ENGINE Serving on http://127.0.0.1:8080
+[26/Apr/2016:16:05:30] ENGINE Bus STARTED
+[26/Apr/2016:16:15:07] ENGINE Listening for SIGTERM.
+[26/Apr/2016:16:15:07] ENGINE Bus STARTING
+[26/Apr/2016:16:15:07] ENGINE Started monitor thread '_TimeoutMonitor'.
+[26/Apr/2016:16:15:07] ENGINE Serving on http://127.0.0.1:8080
+[26/Apr/2016:16:15:07] ENGINE Bus STARTED
+[26/Apr/2016:16:15:09] HTTP 
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cprequest.py", line 670, in respond
+    response.body = self.handler()
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\lib\encoding.py", line 217, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 60, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/server.py", line 74, in new
+    statuts = db.retrieve(Statut)
+  File "C:\Program Files\Python\lib\site-packages\mako\template.py", line 454, in render_unicode
+    as_unicode=True)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 829, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 864, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 890, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\base.html.py", line 25, in render_body
+    context['self'].container(**pageargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\new.html.py", line 89, in render_container
+    for genre in genres:
+TypeError: 'Undefined' object is not iterable
+[26/Apr/2016:16:15:11] HTTP 
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cprequest.py", line 670, in respond
+    response.body = self.handler()
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\lib\encoding.py", line 217, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 60, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/server.py", line 74, in new
+    statuts = db.retrieve(Statut)
+  File "C:\Program Files\Python\lib\site-packages\mako\template.py", line 454, in render_unicode
+    as_unicode=True)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 829, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 864, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 890, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\base.html.py", line 25, in render_body
+    context['self'].container(**pageargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\new.html.py", line 89, in render_container
+    for genre in genres:
+TypeError: 'Undefined' object is not iterable
+[26/Apr/2016:16:16:18] ENGINE Listening for SIGTERM.
+[26/Apr/2016:16:16:18] ENGINE Bus STARTING
+[26/Apr/2016:16:16:18] ENGINE Started monitor thread '_TimeoutMonitor'.
+[26/Apr/2016:16:16:19] ENGINE Serving on http://127.0.0.1:8080
+[26/Apr/2016:16:16:19] ENGINE Bus STARTED

@@ -1,0 +1,19 @@
+<%inherit file="base.html" />
+<%block name="container">
+<section>
+    <article>
+        <h1>${manga.titre}</h1>
+    </article>
+    <article>
+        <ul>
+            %for tome in tomes:
+            %if tome.possede == True:
+                <li>${manga.titre} Tome ${tome.numero}</li>
+            %else:
+                <li style="color:red">${manga.titre} Tome ${tome.numero}</li>
+            %endif
+            %endfor
+        </ul>
+    </article>
+</section>
+</%block>

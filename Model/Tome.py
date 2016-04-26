@@ -7,8 +7,8 @@ class Tome(Base):
     __tablename__ = "tome"
     manga = Column(Integer, ForeignKey("manga.id") , primary_key=True)
     numero = Column(Integer, primary_key=True, nullable=False)
-    date_parution = Column(Date, nullable=False)
-    date_achat = Column(Date, nullable=True)
+    date_parution = Column(String, nullable=False)
+    date_achat = Column(String, nullable=True)
     possede = Column (Boolean, nullable=False)
     lu = Column (Boolean, nullable=False)
     a_acheter = Column (Boolean, nullable=False)

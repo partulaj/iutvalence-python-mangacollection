@@ -1,4 +1,4 @@
-from datetime import date, datetime
+from datetime import datetime
 
 from Core.Database import Database
 from Model.Commentaire import Commentaire
@@ -40,18 +40,15 @@ if __name__ == "__main__":
                     print(i)
                 manga = input("Id manga ?")
                 numero = input("Numero du tome ?")
-                annee_parution = int(input("Annee de parution ?"))
-                mois_parution = int(input("Mois de parution ?"))
-                jour_parution = int(input("Jour de parution ?"))
-                date_parution = date(annee_parution,mois_parution,jour_parution)
+                date_parution = input("Date de parution ?")
                 # Simplification en mode console
-                date_achat = date(datetime.now().year,datetime.now().month,datetime.now().day)
+                date_achat = input("Date d'achat ?")
                 possede = bool(input("Tome dans ma collection ?"))
                 lu = bool(input("Tome lu ?"))
                 a_acheter = bool(input("Tome à acheter ?"))
                 prix = float(input("Prix du tome ?"))
                 couverture = input("Couverture du tome ?")
-                tome = Tome(manga, numero, date_parution, date_achat, possede, lu, a_acheter, prix,couverture)
+                tome = Tome(manga, numero, date_parution, possede, lu, a_acheter, prix,couverture, date_achat)
                 db.createTome(tome)
             if action == 3:
                 liste = db.retrieve(Manga)

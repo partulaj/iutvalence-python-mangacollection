@@ -1,9 +1,0 @@
-<%inherit file="base.html" />
-<%block name="container">
-<h1>Manga Collection</h1>
-<ul>
-    %for manga in mangas:
-    <li><a href="/detail/${manga.id}/">${manga.titre}</a></li>
-    %endfor
-</ul>
-</%block>

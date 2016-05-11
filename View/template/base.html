@@ -1,11 +1,75 @@
+## -*- coding: utf-8 -*-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Manga Collection</title>
+    <link rel="stylesheet" href="/View/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/View/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/View/css/chartist.min.css">
+    <link rel="stylesheet" href="/View/css/style.css">
 </head>
 <body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Manga Collection</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <form class="navbar-form navbar-left" role="search" method="post" action="/search/">
+                <div class="form-group">
+                    <input name="query" type="text" class="form-control" placeholder="Recherche">
+                </div>
+                <button type="submit" class="btn btn-default">Rechercher</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/collection/">Collection</a></li>
+                <li><a href="/shopping_list/">Shopping List</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="dropdownMenu2" role="button"
+                       aria-haspopup="true"
+                       aria-expanded="false">Listes<span class="caret"></span></a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <li><a href="/manga/">Liste des mangas</a></li>
+                        <li><a href="/editeur/">Liste des éditeurs</a></li>
+                        <li><a href="/dessinateur/">Liste des dessinateurs</a></li>
+                        <li><a href="/scenariste/">Liste des scénaristes</a></li>
+                        <li><a href="/genre/">Liste des genres</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Nouveau<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/manga/new/">Nouveau manga</a></li>
+                        <li><a href="/tome/new/">Nouveau tome</a></li>
+                        <li><a href="/editeur/new/">Nouvelle éditeur</a></li>
+                        <li><a href="/dessinateur/new/">Nouveau dessinateur</a></li>
+                        <li><a href="/scenariste/new/">Nouveau scénariste</a></li>
+                        <li><a href="/genre/new/">Nouveau genre</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
 <%block name="container">
+</%block>
+<script src="/View/js/jquery-1.12.3.min.js"></script>
+<script src="/View/js/bootstrap.min.js"></script>
+<script src="/View/js/chartist.min.js"></script>
+<%block name="chart">
 </%block>
 </body>
 </html>

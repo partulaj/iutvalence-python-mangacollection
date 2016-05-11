@@ -1,0 +1,64 @@
+## -*- coding: utf-8 -*-
+<%inherit file="base.html" />
+<%block name="container">
+<div class="container">
+    <div class="ct-chart col-lg-6 col-xs-6" id="genreChart"></div>
+    <div class="ct-chart col-lg-6 col-xs-6" id="editeurChart"></div>
+</div>
+</%block>
+<%block name="chart">
+<script text="javascript/text">
+var data = {
+  labels: [
+%for genre in genres:
+  '${genre[0]}',
+%endfor
+  ],
+  series: [
+  %for genre in genres:
+  ${genre[1]},
+%endfor
+  ]
+};
+
+var options = {
+  width: 400,
+  height: 400,
+  labelInterpolationFnc: function(value) {
+    return value[0]
+  }
+};
+
+var responsiveOptions = [
+  ['screen and (min-width: 640px)', {
+    chartPadding: 30,
+    labelOffset: 100,
+    labelDirection: 'explode',
+    labelInterpolationFnc: function(value) {
+      return value;
+    }
+  }],
+  ['screen and (min-width: 1024px)', {
+    labelOffset: 80,
+    chartPadding: 20
+  }]
+];
+
+new Chartist.Pie('#genreChart', data, options, responsiveOptions);
+
+var data = {
+  labels: [
+%for editeur in editeurs:
+  '${editeur[0]}',
+%endfor
+  ],
+  series: [
+  %for editeur in editeurs:
+  ${editeur[1]},
+%endfor
+  ]
+};
+
+new Chartist.Pie('#editeurChart', data, options, responsiveOptions);
+</script>
+</%block>

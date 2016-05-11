@@ -8,11 +8,11 @@ class Manga(Base):
     id = Column(Integer, primary_key=True)
     titre = Column(String, nullable=False)
     description = Column(String, nullable=True)
-    editeur = Column(Integer, ForeignKey("editeur.id"), nullable=True)
-    scenariste = Column(Integer, ForeignKey("scenariste.id"), nullable=False)
-    dessinateur = Column(Integer, ForeignKey("dessinateur.id"), nullable=False)
-    statut = Column(Integer, ForeignKey("statut.id"), nullable=False)
-    genre = Column(Integer, ForeignKey("genre.id"), nullable=False)
+    editeur = Column(String, nullable=True)
+    scenariste = Column(String, nullable=False)
+    dessinateur = Column(String, nullable=False)
+    statut = Column(String, nullable=False)
+    genre = Column(String, nullable=False)
 
     def __init__(self,titre,description,editeur,scenariste,dessinateur, statut, genre, id=None):
         self.id = id
@@ -25,4 +25,4 @@ class Manga(Base):
         self.genre = genre
 
     def __str__(self):
-        return ("id : {};\ntitre : {};\n".format(self.id, self.titre))
+        return ("id : {};\ntitre : {};\ngenre : {}".format(self.id, self.titre, self.genre))

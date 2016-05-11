@@ -1,0 +1,13 @@
+## -*- coding: utf-8 -*-
+<%inherit file="base.html" />
+<%block name="container">
+<div class="container">
+    <form action="/editeur/add/" method="post">
+        <div class="form-group">
+            <label for="editeur">Editeur :</label>
+            <input type="text" class="form-control" id="editeur" name="editeur">
+        </div>
+        <input type="submit" class="btn btn-success">
+    </form>
+</div>
+</%block>

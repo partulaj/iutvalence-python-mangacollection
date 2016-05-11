@@ -13,10 +13,10 @@ class Database_TestCase(unittest.TestCase):
 
     def test_CreateMangaInvalidType(self):
         db = Database("../mangas.sqlite3")
-        self.assertRaises(BadTypeException,db.createManga,"blop")
-        self.assertRaises(BadTypeException,db.createManga,1)
-        self.assertRaises(BadTypeException,db.createManga,None)
-        self.assertRaises(BadTypeException,db.createManga,False)
+        self.assertRaises(BadTypeException,db.create, Manga,"blop")
+        self.assertRaises(BadTypeException,db.create, Manga,1)
+        self.assertRaises(BadTypeException,db.create, Manga,None)
+        self.assertRaises(BadTypeException,db.create, Manga,False)
 
     def test_DeleteInvalidType(self):
         db = Database("../mangas.sqlite3")

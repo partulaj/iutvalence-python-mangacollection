@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1461680107.396816
+_modified_time = 1462205765.705864
 _enable_loop = True
 _template_filename = 'C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/View/template/new.html'
 _template_uri = 'new.html'
@@ -28,13 +28,14 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
+        editeurs = context.get('editeurs', UNDEFINED)
+        mangas = context.get('mangas', UNDEFINED)
         dessinateurs = context.get('dessinateurs', UNDEFINED)
-        genres = context.get('genres', UNDEFINED)
+        scenaristes = context.get('scenaristes', UNDEFINED)
         def container():
             return render_container(context._locals(__M_locals))
-        scenaristes = context.get('scenaristes', UNDEFINED)
+        genres = context.get('genres', UNDEFINED)
         statuts = context.get('statuts', UNDEFINED)
-        editeurs = context.get('editeurs', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'container'):
@@ -49,15 +50,16 @@ def render_body(context,**pageargs):
 def render_container(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
+        editeurs = context.get('editeurs', UNDEFINED)
+        mangas = context.get('mangas', UNDEFINED)
         dessinateurs = context.get('dessinateurs', UNDEFINED)
-        genres = context.get('genres', UNDEFINED)
+        scenaristes = context.get('scenaristes', UNDEFINED)
         def container():
             return render_container(context)
-        scenaristes = context.get('scenaristes', UNDEFINED)
+        genres = context.get('genres', UNDEFINED)
         statuts = context.get('statuts', UNDEFINED)
-        editeurs = context.get('editeurs', UNDEFINED)
         __M_writer = context.writer()
-        __M_writer('\r\n<form>\r\n    <input type="text" name="manga">\r\n    <textarea name="description"></textarea>\r\n    <select name="scenariste">\r\n')
+        __M_writer('\r\n<form method="post" action="/add/manga/">\r\n    <input type="text" name="titre">\r\n    <textarea name="description"></textarea>\r\n    <select name="scenariste">\r\n')
         for scenariste in scenaristes:
             __M_writer('        <option value="')
             __M_writer(str(scenariste.id))
@@ -92,7 +94,14 @@ def render_container(context,**pageargs):
             __M_writer('">')
             __M_writer(str(genre.genre))
             __M_writer('</option>\r\n')
-        __M_writer('    </select>\r\n</form>\r\n')
+        __M_writer('    </select>\r\n    <input type="submit" value="Ajouter ce manga">\r\n</form>\r\n<form method="post" action="/add/tome/">\r\n    <input type="number" name="numero">\r\n    <select name="manga">\r\n')
+        for manga in mangas:
+            __M_writer('        <option value="')
+            __M_writer(str(manga.id))
+            __M_writer('">')
+            __M_writer(str(manga.titre))
+            __M_writer('</option>\r\n')
+        __M_writer('    </select>\r\n    <input type="text" name="date_parution">\r\n    <input type="text" name="date_achat">\r\n    <input type="checkbox" name="possede" value="1">\r\n    <input type="checkbox" name="a_acheter" value="1">\r\n    <input type="checkbox" name="lu" value="1">\r\n    <input type="text" name="prix">\r\n    <input type="text" name="couverture">\r\n    <input type="submit" value="Ajouter ce tome">\r\n</form>\r\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -100,6 +109,6 @@ def render_container(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"uri": "new.html", "filename": "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/View/template/new.html", "line_map": {"64": 8, "65": 8, "66": 8, "67": 10, "68": 12, "69": 13, "70": 13, "71": 13, "72": 13, "73": 13, "74": 15, "75": 17, "76": 18, "77": 18, "78": 18, "79": 18, "80": 18, "81": 20, "82": 22, "83": 23, "84": 23, "85": 23, "86": 23, "87": 23, "88": 25, "89": 27, "90": 28, "27": 0, "92": 28, "93": 28, "94": 28, "95": 30, "91": 28, "101": 95, "39": 1, "49": 2, "60": 2, "61": 7, "62": 8, "63": 8}, "source_encoding": "ascii"}
+{"source_encoding": "ascii", "line_map": {"27": 0, "40": 1, "50": 2, "62": 2, "63": 7, "64": 8, "65": 8, "66": 8, "67": 8, "68": 8, "69": 10, "70": 12, "71": 13, "72": 13, "73": 13, "74": 13, "75": 13, "76": 15, "77": 17, "78": 18, "79": 18, "80": 18, "81": 18, "82": 18, "83": 20, "84": 22, "85": 23, "86": 23, "87": 23, "88": 23, "89": 23, "90": 25, "91": 27, "92": 28, "93": 28, "94": 28, "95": 28, "96": 28, "97": 30, "98": 36, "99": 37, "100": 37, "101": 37, "102": 37, "103": 37, "104": 39, "110": 104}, "uri": "new.html", "filename": "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/View/template/new.html"}
 __M_END_METADATA
 """

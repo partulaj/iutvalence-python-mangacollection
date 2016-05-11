@@ -1,0 +1,20 @@
+## -*- coding: utf-8 -*-
+<%inherit file="base.html" />
+<%block name="container">
+<div class="container">
+    <div>${total} €</div>
+    %for manga in mangas:
+    <!--<div class="row">-->
+    %for tome in manga.tomes:
+    %if tome.possede == True:
+    <div class="col-xs-6 col-md-3">
+        <a href="/manga/${manga.id}/tome/${tome.numero}/" class="thumbnail"
+           style="background: url(${tome.couverture}) no-repeat;background-size:100%, 100%;height:300px;">
+        </a>
+    </div>
+    %endif
+    %endfor
+    <!--</div>-->
+    %endfor
+</div>
+</%block>

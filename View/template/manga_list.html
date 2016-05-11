@@ -1,0 +1,32 @@
+## -*- coding: utf-8 -*-
+<%inherit file="base.html" />
+<%block name="container">
+<div class="container">
+    <div class="list-group">
+        %for manga in mangas:
+        <a href="/manga/${manga.id}/" class="list-group-item">
+            <div class="row">
+                <h4 class="list-group-item-heading col-lg-3">${manga.titre}</h4>
+                <p class="list-group-item-text col-lg-2">
+                    ${manga.editeur}
+                </p>
+                <p class="list-group-item-text col-lg-2">
+                    ${manga.genre}
+                </p>
+                <p class="list-group-item-text col-lg-3">
+                    %if manga.dessinateur==manga.scenariste:
+                        ${manga.dessinateur}
+                    %else:
+                        ${manga.dessinateur} / ${manga.scenariste}
+                    %endif
+                </p>
+                <p class="list-group-item-text col-lg-2">
+                    <% t = len(manga.tomes) %>
+                    ${t} tomes
+                </p>
+            </div>
+        </a>
+        %endfor
+    </div>
+</div>
+</%block>

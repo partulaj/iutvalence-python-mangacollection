@@ -1,0 +1,96 @@
+## -*- coding: utf-8 -*-
+<%inherit file="base.html" />
+<%block name="container">
+<div class="container">
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#mangas" aria-controls="mangas" role="tab"
+                                                  data-toggle="tab">Mangas</a></li>
+        <li role="presentation"><a href="#editeurs" aria-controls="editeurs" role="tab" data-toggle="tab">Editeurs</a>
+        </li>
+        <li role="presentation"><a href="#scenaristes" aria-controls="scenaristes" role="tab" data-toggle="tab">Scénaristes</a>
+        </li>
+        <li role="presentation"><a href="#dessinateurs" aria-controls="dessinateurs" role="tab" data-toggle="tab">Dessinateurs</a>
+        </li>
+        <li role="presentation"><a href="#genres" aria-controls="genres" role="tab" data-toggle="tab">Genres</a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="mangas">
+            %for manga in mangas:
+            <a href="/manga/${manga.id}/" class="list-group-item">
+                <div class="row">
+                    <h4 class="list-group-item-heading col-lg-3">${manga.titre}</h4>
+                    <p class="list-group-item-text col-lg-2">
+                        ${manga.editeur}
+                    </p>
+                    <p class="list-group-item-text col-lg-2">
+                        ${manga.genre}
+                    </p>
+                    <p class="list-group-item-text col-lg-3">
+                        %if manga.dessinateur==manga.scenariste:
+                        ${manga.dessinateur}
+                        %else:
+                        ${manga.dessinateur} / ${manga.scenariste}
+                        %endif
+                    </p>
+                    <p class="list-group-item-text col-lg-2">
+                        <% t = len(manga.tomes) %>
+                        ${t} tomes
+                    </p>
+                </div>
+            </a>
+            %endfor
+        </div>
+        <div role="tabpanel" class="tab-pane" id="editeurs">
+            <div class="list-group">
+                %for editeur in editeurs:
+                <div class="list-group-item" role="button">
+                    <h4 class="list-group-item-heading">${editeur.editeur}</h4>
+                    <p class="list-group-item-text">
+
+                    </p>
+                </div>
+                %endfor
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="scenaristes">
+            <div class="list-group">
+                %for scenariste in scenaristes:
+                <div class="list-group-item" role="button">
+                    <h4 class="list-group-item-heading">${scenariste.scenariste}</h4>
+                    <p class="list-group-item-text">
+
+                    </p>
+                </div>
+                %endfor
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="dessinateurs">
+            <div class="list-group">
+                %for dessinateur in dessinateurs:
+                <div class="list-group-item" role="button">
+                    <h4 class="list-group-item-heading">${dessinateur.dessinateur}</h4>
+                    <p class="list-group-item-text">
+
+                    </p>
+                </div>
+                %endfor
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane" id="genres">
+            <div class="list-group">
+                %for genre in genres:
+                <div class="list-group-item" role="button">
+                    <h4 class="list-group-item-heading">${genre.genre}</h4>
+                    <p class="list-group-item-text">
+
+                    </p>
+                </div>
+                %endfor
+            </div>
+        </div>
+    </div>
+</div>
+</%block>

@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1461677876.360713
+_modified_time = 1462461182.072107
 _enable_loop = True
 _template_filename = 'C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/View/template/home.html'
 _template_uri = 'home.html'
@@ -49,14 +49,16 @@ def render_container(context,**pageargs):
             return render_container(context)
         mangas = context.get('mangas', UNDEFINED)
         __M_writer = context.writer()
-        __M_writer('\r\n<h1>Manga Collection</h1>\r\n<ul>\r\n')
+        __M_writer('\r\n\r\n<div class="row">\r\n\r\n    <div class="list-group">\r\n')
         for manga in mangas:
-            __M_writer('    <li><a href="/detail/')
+            __M_writer('        <a href="/manga/')
             __M_writer(str(manga.id))
-            __M_writer('/">')
+            __M_writer('/" class="list-group-item">\r\n            <h4 class="list-group-item-heading">')
             __M_writer(str(manga.titre))
-            __M_writer('</a></li>\r\n')
-        __M_writer('</ul>\r\n')
+            __M_writer('</h4>\r\n            <p class="list-group-item-text">')
+            __M_writer(str(manga.description))
+            __M_writer('</p>\r\n        </a>\r\n')
+        __M_writer('    </div>\r\n\r\n</div>\r\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -64,6 +66,6 @@ def render_container(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/View/template/home.html", "uri": "home.html", "line_map": {"65": 59, "35": 1, "45": 2, "27": 0, "52": 2, "53": 5, "54": 6, "55": 6, "56": 6, "57": 6, "58": 6, "59": 8}, "source_encoding": "ascii"}
+{"filename": "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/View/template/home.html", "line_map": {"35": 1, "45": 2, "27": 0, "67": 61, "52": 2, "53": 7, "54": 8, "55": 8, "56": 8, "57": 9, "58": 9, "59": 10, "60": 10, "61": 13}, "uri": "home.html", "source_encoding": "ascii"}
 __M_END_METADATA
 """

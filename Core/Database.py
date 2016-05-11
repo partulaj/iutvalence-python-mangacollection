@@ -4,17 +4,11 @@ from datetime import datetime
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy import func
 
 from Error.BadTypeException import BadTypeException
 from Error.DatabaseConnectionException import DatabaseConnectionException
-from Error.MangaNotExistException import MangaNotExistException
-from Model.Dessinateur import Dessinateur
-from Model.Editeur import Editeur
-from Model.Genre import Genre
-from Model.Manga import Manga
-from Model.Scenariste import Scenariste
-from Model.Statut import Statut
-from Model.Tome import Tome
+from models import *
 
 class Database:
     """
@@ -64,47 +58,6 @@ class Database:
         else:
             raise BadTypeException("Le type fournit n'est pas le type attendu")
 
-    def createManga(self, manga):
-        if isinstance(manga, Manga):
-            if self.retrieve(Editeur, Editeur.editeur, manga.editeur) == None:
-                editeur = self.create(Editeur(manga.editeur), Editeur)
-                manga.editeur = editeur.id
-            else:
-                manga.editeur = self.retrieve(Editeur, Editeur.editeur, manga.editeur).id
-
-            if self.retrieve(Scenariste, Scenariste.scenariste, manga.scenariste) == None:
-                scenariste = self.create(Scenariste(manga.scenariste), Scenariste)
-                manga.scenariste = scenariste.id
-            else:
-                manga.scenariste = self.retrieve(Scenariste, Scenariste.scenariste, manga.scenariste).id
-
-            if self.retrieve(Dessinateur, Dessinateur.dessinateur, manga.dessinateur) == None:
-                dessinateur = self.create(Dessinateur(manga.dessinateur), Dessinateur)
-                manga.dessinateur = dessinateur.id
-            else:
-                manga.dessinateur = self.retrieve(Dessinateur, Dessinateur.dessinateur, manga.dessinateur).id
-
-            if self.retrieve(Statut, Statut.statut, manga.statut) == None:
-                statut = self.create(Statut(manga.statut), Statut)
-                manga.statut = statut.id
-            else:
-                manga.statut = self.retrieve(Statut, Statut.statut, manga.statut).id
-
-            if self.retrieve(Genre, Genre.genre, manga.genre) == None:
-                genre = self.create(Genre(manga.genre), Genre)
-                manga.genre = genre.id
-            else:
-                manga.genre = self.retrieve(Genre, Genre.genre, manga.genre).id
-            self.create(manga, Manga)
-        else:
-            raise BadTypeException("Le type fournit n'est pas le type attendu, type attendu {}, type fournit {}".format(Manga, type(manga).__name__))
-
-    def createTome(self, tome):
-        if self.retrieve(Manga, Manga.id, tome.manga) != None:
-            self.create(tome, Tome)
-        else:
-            raise MangaNotExistException("Aucun Manga avec cette id n'a pu être trouvé")
-
     def delete(self, obj, type):
         if isinstance(obj, type):
             for obj in self.session.query(type).filter(type.id == obj.id):
@@ -138,7 +91,7 @@ class Database:
 
     def retrieveTome(self, manga = None, numero = None):
         if manga!= None and numero!=None:
-            obj = self.session.query(Tome).filter_by(manga = manga, numero = numero).first()
+            obj = self.session.query(Tome).filter_by(manga_id = manga, numero = numero).first()
             if obj != None:
                 return obj
             return None
@@ -155,3 +108,19 @@ class Database:
         else:
             obj = self.session.query(type).all()
             return obj
+
+    def search(self, query):
+        mangas = self.session.query(Manga).filter(Manga.titre.like('%'+query+'%')).all()
+        editeurs = self.session.query(Editeur).filter(Editeur.editeur.like('%'+query+'%')).all()
+        scenaristes = self.session.query(Scenariste).filter(Scenariste.scenariste.like('%'+query+'%')).all()
+        dessinateurs = self.session.query(Dessinateur).filter(Dessinateur.dessinateur.like('%'+query+'%')).all()
+        genres = self.session.query(Genre).filter(Genre.genre.like('%'+query+'%')).all()
+        return mangas, editeurs, scenaristes, dessinateurs, genres
+
+    def genreChartData(self):
+        data = self.session.query(Manga.genre,func.count(Manga.id)).group_by(Manga.genre).all()
+        return data
+
+    def editeurChartData(self):
+        data = self.session.query(Manga.editeur, func.count(Manga.id)).group_by(Manga.editeur).all()
+        return data

@@ -1,0 +1,64 @@
+## -*- coding: utf-8 -*-
+<%inherit file="base.html" />
+<%block name="container">
+<section>
+    <article class="container">
+
+        <div class="row">
+            <div class="col-xs-6 col-lg-3">
+                <a href="#" class="thumbnail"
+                   style="background: url(${tome.couverture}) no-repeat;background-size:100%, 100%;height:300px;">
+                </a>
+            </div>
+            <div class="col-xs-6 col-lg-9">
+                <div class="thumbnail">
+                    <div class="caption">
+                        <h3>${tome.manga.titre} - Tome n°${tome.numero}</h3>
+                        <h4>Prix : ${tome.prix} €</h4>
+                        <p>${tome.manga.description}</p>
+                        <p>
+                            <a href="/manga/${tome.manga.id}/" class="btn btn-primary" role="button">Fiche Manga</a>
+                            %if tome.possede == True:
+                                <a href="/manga/${tome.manga.id}/tome/sell/${tome.numero}" class="btn btn-warning" role="button">Vendre ce tome</a>
+                            %endif
+                            %if tome.a_acheter == True:
+                                <a href="/manga/${tome.manga.id}/tome/buy/${tome.numero}" class="btn btn-success" role="button">Valider l'achat</a>
+                            %endif
+                            %if tome.a_acheter == False and tome.possede == False:
+                                <a href="/manga/${tome.manga.id}/tome/cart/${tome.numero}" class="btn btn-success" role="button">Ajouter à la shopping list</a>
+                            %endif
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-danger" data-toggle="modal"
+                                    data-target="#myModal">Supprimer
+                            </button>
+
+                            <!-- Modal -->
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Confirmation</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        Etes vous sur de vouloir supprimer ce tome ?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">annuler
+                                        </button>
+                                        <a href="/manga/${tome.manga.id}/tome/delete/${tome.numero}" role="button"
+                                           class="btn btn-danger">Supprimer</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </article>
+</section>
+</%block>

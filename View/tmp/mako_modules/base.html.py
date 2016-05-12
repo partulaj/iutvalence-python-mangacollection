@@ -5,12 +5,12 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1463035092.54583
+_modified_time = 1463053977.610396
 _enable_loop = True
-_template_filename = 'C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/View/template/base.html'
+_template_filename = 'G:/public_html/iutvalence-python-mangacollection/View/template/base.html'
 _template_uri = 'base.html'
 _source_encoding = 'utf-8'
-_exports = ['container', 'chart']
+_exports = ['chart', 'container']
 
 
 def render_body(context,**pageargs):
@@ -38,18 +38,6 @@ def render_body(context,**pageargs):
         context.caller_stack._pop_frame()
 
 
-def render_container(context,**pageargs):
-    __M_caller = context.caller_stack._push_frame()
-    try:
-        def container():
-            return render_container(context)
-        __M_writer = context.writer()
-        __M_writer('\r\n')
-        return ''
-    finally:
-        context.caller_stack._pop_frame()
-
-
 def render_chart(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
@@ -62,8 +50,20 @@ def render_chart(context,**pageargs):
         context.caller_stack._pop_frame()
 
 
+def render_container(context,**pageargs):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        def container():
+            return render_container(context)
+        __M_writer = context.writer()
+        __M_writer('\r\n')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
 """
 __M_BEGIN_METADATA
-{"filename": "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/View/template/base.html", "line_map": {"16": 0, "65": 59, "35": 74, "53": 73, "41": 68, "25": 2, "59": 73, "30": 69, "47": 68}, "source_encoding": "utf-8", "uri": "base.html"}
+{"source_encoding": "utf-8", "filename": "G:/public_html/iutvalence-python-mangacollection/View/template/base.html", "uri": "base.html", "line_map": {"16": 0, "65": 59, "35": 74, "53": 68, "41": 73, "25": 2, "59": 68, "30": 69, "47": 73}}
 __M_END_METADATA
 """

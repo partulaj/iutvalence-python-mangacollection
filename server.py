@@ -4,6 +4,7 @@ from mako.lookup import TemplateLookup
 from Core.Database import Database
 from models import *
 from math import *
+from routes import *
 
 try:
     _curdir = os.path.join(os.getcwd(), os.path.dirname(os.path.abspath(__file__)))

@@ -1,13 +1,12 @@
 # -*- coding:utf-8 -*-
 from mako import runtime, filters, cache
 UNDEFINED = runtime.UNDEFINED
-STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1462987177.480401
+_modified_time = 1463053282.165996
 _enable_loop = True
-_template_filename = 'C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/View/template/genre_list.html'
+_template_filename = 'G:\\public_html\\iutvalence-python-mangacollection\\View/template/genre_list.html'
 _template_uri = 'genre_list.html'
 _source_encoding = 'utf-8'
 _exports = ['container']
@@ -62,6 +61,6 @@ def render_container(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"line_map": {"35": 2, "52": 3, "53": 8, "54": 9, "55": 10, "56": 10, "57": 15, "27": 0, "45": 3, "63": 57}, "filename": "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/View/template/genre_list.html", "uri": "genre_list.html", "source_encoding": "utf-8"}
+{"uri": "genre_list.html", "source_encoding": "utf-8", "line_map": {"34": 2, "51": 3, "52": 8, "53": 9, "54": 10, "55": 10, "56": 15, "26": 0, "44": 3, "62": 56}, "filename": "G:\\public_html\\iutvalence-python-mangacollection\\View/template/genre_list.html"}
 __M_END_METADATA
 """

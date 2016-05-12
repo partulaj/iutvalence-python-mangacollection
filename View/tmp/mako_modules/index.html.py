@@ -1,16 +1,15 @@
 # -*- coding:utf-8 -*-
 from mako import runtime, filters, cache
 UNDEFINED = runtime.UNDEFINED
-STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1463034462.935126
+_modified_time = 1463053281.466996
 _enable_loop = True
-_template_filename = 'C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/View/template/index.html'
+_template_filename = 'G:\\public_html\\iutvalence-python-mangacollection\\View/template/index.html'
 _template_uri = 'index.html'
 _source_encoding = 'utf-8'
-_exports = ['container', 'chart']
+_exports = ['chart', 'container']
 
 
 def _mako_get_namespace(context, name):
@@ -28,12 +27,12 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        def container():
-            return render_container(context._locals(__M_locals))
+        genres = context.get('genres', UNDEFINED)
         def chart():
             return render_chart(context._locals(__M_locals))
-        genres = context.get('genres', UNDEFINED)
         editeurs = context.get('editeurs', UNDEFINED)
+        def container():
+            return render_container(context._locals(__M_locals))
         __M_writer = context.writer()
         __M_writer('\r\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'container'):
@@ -50,25 +49,13 @@ def render_body(context,**pageargs):
         context.caller_stack._pop_frame()
 
 
-def render_container(context,**pageargs):
-    __M_caller = context.caller_stack._push_frame()
-    try:
-        def container():
-            return render_container(context)
-        __M_writer = context.writer()
-        __M_writer('\r\n<div class="container">\r\n    <div class="ct-chart col-lg-6 col-xs-6" id="genreChart">\r\n        <h3>Nombre de tomes par genre</h3>\r\n    </div>\r\n    <div class="ct-chart col-lg-6 col-xs-6" id="editeurChart">\r\n        <h3>Nombre de tome par editeur</h3>\r\n    </div>\r\n</div>\r\n')
-        return ''
-    finally:
-        context.caller_stack._pop_frame()
-
-
 def render_chart(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        editeurs = context.get('editeurs', UNDEFINED)
+        genres = context.get('genres', UNDEFINED)
         def chart():
             return render_chart(context)
-        genres = context.get('genres', UNDEFINED)
+        editeurs = context.get('editeurs', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n<script text="javascript/text">\r\nvar data = {\r\n  labels: [\r\n')
         for genre in genres:
@@ -96,8 +83,20 @@ def render_chart(context,**pageargs):
         context.caller_stack._pop_frame()
 
 
+def render_container(context,**pageargs):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        def container():
+            return render_container(context)
+        __M_writer = context.writer()
+        __M_writer('\r\n<div class="container">\r\n    <div class="ct-chart col-lg-6 col-xs-6" id="genreChart">\r\n        <h3>Nombre de tomes par genre</h3>\r\n    </div>\r\n    <div class="ct-chart col-lg-6 col-xs-6" id="editeurChart">\r\n        <h3>Nombre de tome par editeur</h3>\r\n    </div>\r\n</div>\r\n')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
 """
 __M_BEGIN_METADATA
-{"line_map": {"65": 13, "73": 13, "74": 17, "75": 18, "76": 18, "77": 18, "78": 20, "79": 22, "80": 23, "81": 23, "82": 23, "83": 25, "84": 55, "85": 56, "86": 56, "87": 56, "88": 58, "89": 60, "90": 61, "27": 0, "92": 61, "93": 63, "91": 61, "38": 2, "43": 12, "99": 93, "53": 3, "59": 3}, "source_encoding": "utf-8", "filename": "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/View/template/index.html", "uri": "index.html"}
+{"uri": "index.html", "source_encoding": "utf-8", "line_map": {"64": 18, "65": 20, "66": 22, "67": 23, "68": 23, "69": 23, "70": 25, "71": 55, "72": 56, "73": 56, "74": 56, "75": 58, "76": 60, "77": 61, "78": 61, "79": 61, "80": 63, "86": 3, "26": 0, "92": 3, "98": 92, "37": 2, "42": 12, "52": 13, "60": 13, "61": 17, "62": 18, "63": 18}, "filename": "G:\\public_html\\iutvalence-python-mangacollection\\View/template/index.html"}
 __M_END_METADATA
 """

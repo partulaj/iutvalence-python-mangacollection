@@ -1,13 +1,12 @@
 # -*- coding:utf-8 -*-
 from mako import runtime, filters, cache
 UNDEFINED = runtime.UNDEFINED
-STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1463042489.919902
+_modified_time = 1463053281.736996
 _enable_loop = True
-_template_filename = 'C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/View/template/manga_detail.html'
+_template_filename = 'G:\\public_html\\iutvalence-python-mangacollection\\View/template/manga_detail.html'
 _template_uri = 'manga_detail.html'
 _source_encoding = 'utf-8'
 _exports = ['container']
@@ -31,10 +30,10 @@ def render_body(context,**pageargs):
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
         len = context.get('len', UNDEFINED)
+        manga = context.get('manga', UNDEFINED)
         range = context.get('range', UNDEFINED)
         def container():
             return render_container(context._locals(__M_locals))
-        manga = context.get('manga', UNDEFINED)
         commentaire = context.get('commentaire', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n')
@@ -51,10 +50,10 @@ def render_container(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         len = context.get('len', UNDEFINED)
+        manga = context.get('manga', UNDEFINED)
         range = context.get('range', UNDEFINED)
         def container():
             return render_container(context)
-        manga = context.get('manga', UNDEFINED)
         commentaire = context.get('commentaire', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n<section>\r\n    <div class="container">\r\n        <div class="row">\r\n            <div class="col-xs-12">\r\n                <div class="thumbnail">\r\n                    <div class="caption">\r\n                        <h3>')
@@ -154,6 +153,6 @@ def render_container(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/View/template/manga_detail.html", "source_encoding": "utf-8", "line_map": {"128": 132, "129": 132, "130": 132, "131": 133, "132": 133, "133": 138, "134": 142, "135": 148, "136": 149, "137": 150, "138": 151, "139": 152, "140": 152, "141": 152, "142": 155, "143": 159, "16": 96, "145": 163, "146": 163, "147": 164, "148": 164, "149": 169, "155": 149, "29": 0, "40": 2, "50": 3, "60": 3, "61": 10, "62": 10, "63": 12, "64": 13, "65": 13, "66": 13, "67": 14, "68": 15, "69": 15, "70": 15, "71": 15, "72": 15, "73": 17, "74": 17, "75": 17, "76": 17, "77": 17, "78": 19, "79": 19, "80": 30, "81": 30, "82": 31, "83": 31, "84": 32, "85": 32, "86": 49, "87": 49, "88": 62, "89": 62, "90": 96, "91": 97, "144": 160, "102": 106, "103": 107, "104": 108, "105": 109, "106": 111, "107": 112, "108": 113, "109": 114, "110": 114, "111": 114, "112": 114, "113": 115, "114": 115, "115": 120, "116": 120, "121": 123, "122": 126, "123": 127, "124": 129, "125": 130, "126": 131, "127": 132}, "uri": "manga_detail.html"}
+{"uri": "manga_detail.html", "source_encoding": "utf-8", "line_map": {"128": 132, "129": 132, "130": 133, "131": 133, "132": 138, "133": 142, "134": 148, "135": 149, "136": 150, "137": 151, "138": 152, "139": 152, "140": 152, "141": 155, "142": 159, "15": 96, "144": 163, "145": 163, "146": 164, "147": 164, "148": 169, "154": 148, "28": 0, "39": 2, "49": 3, "59": 3, "60": 10, "61": 10, "62": 12, "63": 13, "64": 13, "65": 13, "66": 14, "67": 15, "68": 15, "69": 15, "70": 15, "71": 15, "72": 17, "73": 17, "74": 17, "75": 17, "76": 17, "77": 19, "78": 19, "79": 30, "80": 30, "81": 31, "82": 31, "83": 32, "84": 32, "85": 49, "86": 49, "87": 62, "88": 62, "89": 96, "90": 97, "143": 160, "101": 106, "102": 107, "103": 108, "104": 109, "105": 111, "106": 112, "107": 113, "108": 114, "109": 114, "110": 114, "111": 114, "112": 115, "113": 115, "114": 120, "115": 120, "120": 123, "121": 126, "122": 127, "123": 129, "124": 130, "125": 131, "126": 132, "127": 132}, "filename": "G:\\public_html\\iutvalence-python-mangacollection\\View/template/manga_detail.html"}
 __M_END_METADATA
 """

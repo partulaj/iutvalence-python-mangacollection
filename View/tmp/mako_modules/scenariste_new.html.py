@@ -1,13 +1,12 @@
 # -*- coding:utf-8 -*-
 from mako import runtime, filters, cache
 UNDEFINED = runtime.UNDEFINED
-STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1463041302.390912
+_modified_time = 1463053281.851996
 _enable_loop = True
-_template_filename = 'C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/View/template/scenariste_new.html'
+_template_filename = 'G:\\public_html\\iutvalence-python-mangacollection\\View/template/scenariste_new.html'
 _template_uri = 'scenariste_new.html'
 _source_encoding = 'utf-8'
 _exports = ['container']
@@ -55,6 +54,6 @@ def render_container(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"source_encoding": "utf-8", "filename": "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/View/template/scenariste_new.html", "uri": "scenariste_new.html", "line_map": {"56": 50, "34": 2, "27": 0, "44": 3, "50": 3}}
+{"uri": "scenariste_new.html", "source_encoding": "utf-8", "line_map": {"33": 2, "26": 0, "43": 3, "55": 49, "49": 3}, "filename": "G:\\public_html\\iutvalence-python-mangacollection\\View/template/scenariste_new.html"}
 __M_END_METADATA
 """

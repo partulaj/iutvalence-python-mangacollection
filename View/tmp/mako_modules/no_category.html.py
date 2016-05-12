@@ -1,13 +1,12 @@
 # -*- coding:utf-8 -*-
 from mako import runtime, filters, cache
 UNDEFINED = runtime.UNDEFINED
-STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1463035091.772465
+_modified_time = 1463053281.585996
 _enable_loop = True
-_template_filename = 'C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/View/template/no_category.html'
+_template_filename = 'G:\\public_html\\iutvalence-python-mangacollection\\View/template/no_category.html'
 _template_uri = 'no_category.html'
 _source_encoding = 'utf-8'
 _exports = ['container']
@@ -28,9 +27,9 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
+        mangas = context.get('mangas', UNDEFINED)
         def container():
             return render_container(context._locals(__M_locals))
-        mangas = context.get('mangas', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'container'):
@@ -45,9 +44,9 @@ def render_body(context,**pageargs):
 def render_container(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
+        mangas = context.get('mangas', UNDEFINED)
         def container():
             return render_container(context)
-        mangas = context.get('mangas', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n<div class="container">\r\n')
         for manga in mangas:
@@ -70,6 +69,6 @@ def render_container(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"filename": "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/View/template/no_category.html", "line_map": {"64": 16, "65": 18, "35": 2, "71": 65, "45": 3, "27": 0, "52": 3, "53": 5, "54": 6, "55": 7, "56": 8, "57": 9, "58": 10, "59": 10, "60": 10, "61": 10, "62": 11, "63": 11}, "source_encoding": "utf-8", "uri": "no_category.html"}
+{"uri": "no_category.html", "source_encoding": "utf-8", "line_map": {"64": 18, "34": 2, "70": 64, "44": 3, "61": 11, "51": 3, "52": 5, "53": 6, "54": 7, "55": 8, "56": 9, "57": 10, "26": 0, "59": 10, "60": 10, "58": 10, "62": 11, "63": 16}, "filename": "G:\\public_html\\iutvalence-python-mangacollection\\View/template/no_category.html"}
 __M_END_METADATA
 """

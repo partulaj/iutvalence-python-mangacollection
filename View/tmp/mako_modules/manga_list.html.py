@@ -1,13 +1,12 @@
 # -*- coding:utf-8 -*-
 from mako import runtime, filters, cache
 UNDEFINED = runtime.UNDEFINED
-STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1462987609.322888
+_modified_time = 1463053281.691996
 _enable_loop = True
-_template_filename = 'C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/View/template/manga_list.html'
+_template_filename = 'G:\\public_html\\iutvalence-python-mangacollection\\View/template/manga_list.html'
 _template_uri = 'manga_list.html'
 _source_encoding = 'utf-8'
 _exports = ['container']
@@ -86,6 +85,6 @@ def render_container(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"source_encoding": "utf-8", "uri": "manga_list.html", "filename": "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/View/template/manga_list.html", "line_map": {"64": 14, "65": 17, "66": 18, "67": 18, "68": 18, "69": 19, "70": 20, "71": 20, "72": 20, "73": 20, "74": 20, "75": 22, "76": 24, "78": 24, "79": 25, "80": 25, "81": 30, "87": 81, "27": 0, "36": 2, "46": 3, "54": 3, "55": 6, "56": 7, "57": 7, "58": 7, "59": 9, "60": 9, "61": 11, "62": 11, "63": 14}}
+{"uri": "manga_list.html", "source_encoding": "utf-8", "line_map": {"64": 17, "65": 18, "66": 18, "67": 18, "68": 19, "69": 20, "70": 20, "71": 20, "72": 20, "73": 20, "74": 22, "75": 24, "77": 24, "78": 25, "79": 25, "80": 30, "86": 80, "26": 0, "35": 2, "45": 3, "53": 3, "54": 6, "55": 7, "56": 7, "57": 7, "58": 9, "59": 9, "60": 11, "61": 11, "62": 14, "63": 14}, "filename": "G:\\public_html\\iutvalence-python-mangacollection\\View/template/manga_list.html"}
 __M_END_METADATA
 """

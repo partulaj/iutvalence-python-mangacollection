@@ -14,10 +14,16 @@
                 <div class="thumbnail">
                     <div class="caption">
                         <h3>${tome.manga.titre} - Tome n°${tome.numero}</h3>
-                        <h4>Prix : ${tome.prix} €</h4>
+                        <h4>${tome.prix} € - ${tome.date_parution} -
+                            %if tome.lu == True:
+                                Tome lu
+                            %endif</h4>
                         <p>${tome.manga.description}</p>
                         <p>
                             <a href="/manga/${tome.manga.id}/" class="btn btn-primary" role="button">Fiche Manga</a>
+                            %if tome.lu != True:
+                            <a href="/manga/${tome.manga.id}/tome/read/${tome.numero}" class="btn btn-success" role="button">Lu</a>
+                            %endif
                             %if tome.possede == True:
                                 <a href="/manga/${tome.manga.id}/tome/sell/${tome.numero}" class="btn btn-warning" role="button">Vendre ce tome</a>
                             %endif

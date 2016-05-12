@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1462628715.873544
+_modified_time = 1463041302.373863
 _enable_loop = True
 _template_filename = 'C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/View/template/manga_new.html'
 _template_uri = 'manga_new.html'
@@ -28,11 +28,11 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        dessinateurs = context.get('dessinateurs', UNDEFINED)
-        editeurs = context.get('editeurs', UNDEFINED)
-        scenaristes = context.get('scenaristes', UNDEFINED)
         def container():
             return render_container(context._locals(__M_locals))
+        scenaristes = context.get('scenaristes', UNDEFINED)
+        dessinateurs = context.get('dessinateurs', UNDEFINED)
+        editeurs = context.get('editeurs', UNDEFINED)
         genres = context.get('genres', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n')
@@ -48,42 +48,42 @@ def render_body(context,**pageargs):
 def render_container(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        dessinateurs = context.get('dessinateurs', UNDEFINED)
-        editeurs = context.get('editeurs', UNDEFINED)
-        scenaristes = context.get('scenaristes', UNDEFINED)
         def container():
             return render_container(context)
+        scenaristes = context.get('scenaristes', UNDEFINED)
+        dessinateurs = context.get('dessinateurs', UNDEFINED)
+        editeurs = context.get('editeurs', UNDEFINED)
         genres = context.get('genres', UNDEFINED)
         __M_writer = context.writer()
-        __M_writer('\r\n<form method="post" action="/manga/add/">\r\n    <input type="text" name="titre">\r\n    <textarea name="description"></textarea>\r\n    <select name="scenariste">\r\n')
+        __M_writer('\r\n<div class="container">\r\n    <form method="post" action="/manga/add/">\r\n\r\n        <div class="form-group">\r\n            <label for="titre">Titre</label>\r\n            <input class="form-control" type="text" name="titre" id="titre" required>\r\n        </div>\r\n        <div class="form-group">\r\n            <label for="description">Description</label>\r\n            <textarea class="form-control" name="description" id="description"></textarea>\r\n        </div>\r\n        <div class="form-group">\r\n            <label for="scenariste">Scenariste</label>\r\n            <select class="form-control" name="scenariste" id="scenariste"  required>\r\n')
         for scenariste in scenaristes:
-            __M_writer('        <option value="')
+            __M_writer('                <option value="')
             __M_writer(str(scenariste.scenariste))
             __M_writer('">')
             __M_writer(str(scenariste.scenariste))
             __M_writer('</option>\r\n')
-        __M_writer('    </select>\r\n    <select name="dessinateur">\r\n')
+        __M_writer('            </select>\r\n        </div>\r\n        <div class="form-group">\r\n            <label for="dessinateur">Name</label>\r\n            <select class="form-control" name="dessinateur" id="dessinateur" required>\r\n')
         for dessinateur in dessinateurs:
-            __M_writer('        <option value="')
+            __M_writer('                <option value="')
             __M_writer(str(dessinateur.dessinateur))
             __M_writer('">')
             __M_writer(str(dessinateur.dessinateur))
             __M_writer('</option>\r\n')
-        __M_writer('    </select>\r\n    <select name="editeur">\r\n')
+        __M_writer('            </select>\r\n        </div>\r\n        <div class="form-group">\r\n            <label for="editeur">Editeur</label>\r\n            <select class="form-control" name="editeur" id="editeur" required>\r\n')
         for editeur in editeurs:
-            __M_writer('        <option value="')
+            __M_writer('                <option value="')
             __M_writer(str(editeur.editeur))
             __M_writer('">')
             __M_writer(str(editeur.editeur))
             __M_writer('</option>\r\n')
-        __M_writer('    </select>\r\n    <select name="statut">\r\n        <option value="En cours">En cours</option>\r\n        <option value="En pause">En pause</option>\r\n        <option value="Terminé">Terminé</option>\r\n    </select>\r\n    <select name="genre">\r\n')
+        __M_writer('            </select>\r\n        </div>\r\n        <div class="form-group">\r\n            <label for="statut">Statut</label>\r\n            <select class="form-control" name="statut" id="statut" required>\r\n                <option value="En cours">En cours</option>\r\n                <option value="En pause">En pause</option>\r\n                <option value="Terminé">Terminé</option>\r\n            </select>\r\n        </div>\r\n        <div class="form-group">\r\n            <label for="genre">Genre</label>\r\n            <select class="form-control" name="genre" id="genre" required>\r\n')
         for genre in genres:
-            __M_writer('        <option value="')
+            __M_writer('                <option value="')
             __M_writer(str(genre.genre))
             __M_writer('">')
             __M_writer(str(genre.genre))
             __M_writer('</option>\r\n')
-        __M_writer('    </select>\r\n    <input type="submit" value="Ajouter ce manga">\r\n</form>\r\n')
+        __M_writer('            </select>\r\n        </div>\r\n        <input type="submit" class="btn btn-success block-center" value="Ajouter ce manga">\r\n    </form>\r\n</div>\r\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -91,6 +91,6 @@ def render_container(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"line_map": {"64": 9, "65": 11, "66": 13, "67": 14, "68": 14, "69": 14, "70": 14, "71": 14, "72": 16, "73": 18, "74": 19, "75": 19, "76": 19, "77": 19, "78": 19, "79": 21, "80": 28, "81": 29, "82": 29, "83": 29, "84": 29, "85": 29, "86": 31, "27": 0, "92": 86, "38": 2, "48": 3, "58": 3, "59": 8, "60": 9, "61": 9, "62": 9, "63": 9}, "uri": "manga_new.html", "filename": "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/View/template/manga_new.html", "source_encoding": "utf-8"}
+{"source_encoding": "utf-8", "filename": "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/View/template/manga_new.html", "uri": "manga_new.html", "line_map": {"64": 19, "65": 21, "66": 26, "67": 27, "68": 27, "69": 27, "70": 27, "71": 27, "72": 29, "73": 34, "74": 35, "75": 35, "76": 35, "77": 35, "78": 35, "79": 37, "80": 50, "81": 51, "82": 51, "83": 51, "84": 51, "85": 51, "86": 53, "27": 0, "92": 86, "38": 2, "48": 3, "58": 3, "59": 18, "60": 19, "61": 19, "62": 19, "63": 19}}
 __M_END_METADATA
 """

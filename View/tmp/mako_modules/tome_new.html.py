@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1462976959.476457
+_modified_time = 1463041302.453087
 _enable_loop = True
 _template_filename = 'C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/View/template/tome_new.html'
 _template_uri = 'tome_new.html'
@@ -56,7 +56,7 @@ def render_container(context,**pageargs):
             __M_writer('">')
             __M_writer(str(manga.titre))
             __M_writer('</option>\r\n')
-        __M_writer('        </select>\r\n        <div class="form-group">\r\n            <label for="numero">Numero :</label>\r\n            <input type="text" class="form-control" id="numero" name="numero">\r\n        </div>\r\n        <div class="form-group">\r\n            <label for="date_parution">Date de parution :</label>\r\n            <input type="text" class="form-control" id="date_parution" name="date_parution">\r\n        </div>\r\n        <div class="form-group">\r\n            <label for="prix">Prix :</label>\r\n            <input type="text" class="form-control" id="prix" name="prix">\r\n        </div>\r\n        <div class="form-group">\r\n            <label for="couverture">Couverture :</label>\r\n            <input type="text" class="form-control" id="couverture" name="couverture">\r\n        </div>\r\n        <div class="form-group">\r\n            <label for="date_achat">Date d\'achat :</label>\r\n            <input type="text" class="form-control" id="date_achat" name="date_achat">\r\n        </div>\r\n        <div class="checkbox">\r\n            <label>\r\n                <input type="checkbox" name="possede" value="1"> Je possède ce tome\r\n            </label>\r\n        </div>\r\n        <div class="checkbox">\r\n            <label>\r\n                <input type="checkbox" name="lu" value="1"> J\'ai lu ce tome\r\n            </label>\r\n        </div>\r\n        <div class="checkbox">\r\n            <label>\r\n                <input type="checkbox" name="a_acheter" value="1"> Je dois acheté ce tome\r\n            </label>\r\n        </div>\r\n        <input type="submit" class="btn btn-success">\r\n    </form>\r\n</div>\r\n')
+        __M_writer('        </select>\r\n        <div class="form-group">\r\n            <label for="numero">Numero :</label>\r\n            <input type="text" class="form-control" id="numero" name="numero" required>\r\n        </div>\r\n        <div class="form-group">\r\n            <label for="date_parution">Date de parution :</label>\r\n            <input type="text" class="form-control" id="date_parution" name="date_parution" required>\r\n        </div>\r\n        <div class="form-group">\r\n            <label for="prix">Prix :</label>\r\n            <input type="text" class="form-control" id="prix" name="prix" required>\r\n        </div>\r\n        <div class="form-group">\r\n            <label for="couverture">Couverture :</label>\r\n            <input type="text" class="form-control" id="couverture" name="couverture" required>\r\n        </div>\r\n        <div class="form-group">\r\n            <label for="date_achat">Date d\'achat :</label>\r\n            <input type="text" class="form-control" id="date_achat" name="date_achat">\r\n        </div>\r\n        <div class="checkbox">\r\n            <label>\r\n                <input type="checkbox" name="possede" value="1"> Je possède ce tome\r\n            </label>\r\n        </div>\r\n        <div class="checkbox">\r\n            <label>\r\n                <input type="checkbox" name="lu" value="1"> J\'ai lu ce tome\r\n            </label>\r\n        </div>\r\n        <div class="checkbox">\r\n            <label>\r\n                <input type="checkbox" name="a_acheter" value="1"> Je dois acheté ce tome\r\n            </label>\r\n        </div>\r\n        <input type="submit" class="btn btn-success">\r\n    </form>\r\n</div>\r\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -64,6 +64,6 @@ def render_container(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"uri": "tome_new.html", "source_encoding": "utf-8", "filename": "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/View/template/tome_new.html", "line_map": {"65": 59, "35": 2, "45": 3, "27": 0, "52": 3, "53": 7, "54": 8, "55": 8, "56": 8, "57": 8, "58": 8, "59": 10}}
+{"source_encoding": "utf-8", "filename": "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/View/template/tome_new.html", "uri": "tome_new.html", "line_map": {"65": 59, "35": 2, "45": 3, "27": 0, "52": 3, "53": 7, "54": 8, "55": 8, "56": 8, "57": 8, "58": 8, "59": 10}}
 __M_END_METADATA
 """

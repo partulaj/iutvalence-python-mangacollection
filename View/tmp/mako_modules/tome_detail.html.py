@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1462996885.469965
+_modified_time = 1463039718.159042
 _enable_loop = True
 _template_filename = 'C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/View/template/tome_detail.html'
 _template_uri = 'tome_detail.html'
@@ -55,13 +55,24 @@ def render_container(context,**pageargs):
         __M_writer(str(tome.manga.titre))
         __M_writer(' - Tome n°')
         __M_writer(str(tome.numero))
-        __M_writer('</h3>\r\n                        <h4>Prix : ')
+        __M_writer('</h3>\r\n                        <h4>')
         __M_writer(str(tome.prix))
-        __M_writer(' €</h4>\r\n                        <p>')
+        __M_writer(' € - ')
+        __M_writer(str(tome.date_parution))
+        __M_writer(' -\r\n')
+        if tome.lu == True:
+            __M_writer('                                Tome lu\r\n')
+        __M_writer('                        <p>')
         __M_writer(str(tome.manga.description))
         __M_writer('</p>\r\n                        <p>\r\n                            <a href="/manga/')
         __M_writer(str(tome.manga.id))
         __M_writer('/" class="btn btn-primary" role="button">Fiche Manga</a>\r\n')
+        if tome.lu != True:
+            __M_writer('                            <a href="/manga/')
+            __M_writer(str(tome.manga.id))
+            __M_writer('/tome/read/')
+            __M_writer(str(tome.numero))
+            __M_writer('" class="btn btn-success" role="button">Lu</a>\r\n')
         if tome.possede == True:
             __M_writer('                                <a href="/manga/')
             __M_writer(str(tome.manga.id))
@@ -92,6 +103,6 @@ def render_container(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"uri": "tome_detail.html", "line_map": {"64": 20, "65": 21, "66": 22, "67": 22, "68": 22, "69": 22, "70": 22, "71": 24, "72": 25, "73": 25, "74": 25, "75": 25, "76": 25, "77": 27, "78": 28, "79": 28, "80": 28, "81": 28, "82": 28, "83": 30, "84": 50, "85": 50, "86": 50, "87": 50, "27": 0, "93": 87, "35": 2, "45": 3, "52": 3, "53": 10, "54": 10, "55": 16, "56": 16, "57": 16, "58": 16, "59": 17, "60": 17, "61": 18, "62": 18, "63": 20}, "source_encoding": "utf-8", "filename": "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/View/template/tome_detail.html"}
+{"filename": "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/View/template/tome_detail.html", "source_encoding": "utf-8", "uri": "tome_detail.html", "line_map": {"27": 0, "35": 2, "45": 3, "52": 3, "53": 10, "54": 10, "55": 16, "56": 16, "57": 16, "58": 16, "59": 17, "60": 17, "61": 17, "62": 17, "63": 18, "64": 19, "65": 21, "66": 21, "67": 21, "68": 23, "69": 23, "70": 24, "71": 25, "72": 25, "73": 25, "74": 25, "75": 25, "76": 27, "77": 28, "78": 28, "79": 28, "80": 28, "81": 28, "82": 30, "83": 31, "84": 31, "85": 31, "86": 31, "87": 31, "88": 33, "89": 34, "90": 34, "91": 34, "92": 34, "93": 34, "94": 36, "95": 56, "96": 56, "97": 56, "98": 56, "104": 98}}
 __M_END_METADATA
 """

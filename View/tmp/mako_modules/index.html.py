@@ -5,12 +5,12 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1463008354.268895
+_modified_time = 1463034462.935126
 _enable_loop = True
 _template_filename = 'C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/View/template/index.html'
 _template_uri = 'index.html'
 _source_encoding = 'utf-8'
-_exports = ['chart', 'container']
+_exports = ['container', 'chart']
 
 
 def _mako_get_namespace(context, name):
@@ -28,12 +28,12 @@ def render_body(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
         __M_locals = __M_dict_builtin(pageargs=pageargs)
-        genres = context.get('genres', UNDEFINED)
-        editeurs = context.get('editeurs', UNDEFINED)
-        def chart():
-            return render_chart(context._locals(__M_locals))
         def container():
             return render_container(context._locals(__M_locals))
+        def chart():
+            return render_chart(context._locals(__M_locals))
+        genres = context.get('genres', UNDEFINED)
+        editeurs = context.get('editeurs', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n')
         if 'parent' not in context._data or not hasattr(context._data['parent'], 'container'):
@@ -50,13 +50,25 @@ def render_body(context,**pageargs):
         context.caller_stack._pop_frame()
 
 
+def render_container(context,**pageargs):
+    __M_caller = context.caller_stack._push_frame()
+    try:
+        def container():
+            return render_container(context)
+        __M_writer = context.writer()
+        __M_writer('\r\n<div class="container">\r\n    <div class="ct-chart col-lg-6 col-xs-6" id="genreChart">\r\n        <h3>Nombre de tomes par genre</h3>\r\n    </div>\r\n    <div class="ct-chart col-lg-6 col-xs-6" id="editeurChart">\r\n        <h3>Nombre de tome par editeur</h3>\r\n    </div>\r\n</div>\r\n')
+        return ''
+    finally:
+        context.caller_stack._pop_frame()
+
+
 def render_chart(context,**pageargs):
     __M_caller = context.caller_stack._push_frame()
     try:
-        genres = context.get('genres', UNDEFINED)
         editeurs = context.get('editeurs', UNDEFINED)
         def chart():
             return render_chart(context)
+        genres = context.get('genres', UNDEFINED)
         __M_writer = context.writer()
         __M_writer('\r\n<script text="javascript/text">\r\nvar data = {\r\n  labels: [\r\n')
         for genre in genres:
@@ -84,20 +96,8 @@ def render_chart(context,**pageargs):
         context.caller_stack._pop_frame()
 
 
-def render_container(context,**pageargs):
-    __M_caller = context.caller_stack._push_frame()
-    try:
-        def container():
-            return render_container(context)
-        __M_writer = context.writer()
-        __M_writer('\r\n<div class="container">\r\n    <div class="ct-chart col-lg-6 col-xs-6" id="genreChart"></div>\r\n    <div class="ct-chart col-lg-6 col-xs-6" id="editeurChart"></div>\r\n</div>\r\n')
-        return ''
-    finally:
-        context.caller_stack._pop_frame()
-
-
 """
 __M_BEGIN_METADATA
-{"line_map": {"64": 14, "65": 14, "66": 16, "67": 18, "68": 19, "69": 19, "70": 19, "71": 21, "72": 51, "73": 52, "74": 52, "75": 52, "76": 54, "77": 56, "78": 57, "79": 57, "80": 57, "81": 59, "87": 3, "27": 0, "93": 3, "99": 93, "38": 2, "43": 8, "53": 9, "61": 9, "62": 13, "63": 14}, "source_encoding": "utf-8", "uri": "index.html", "filename": "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/View/template/index.html"}
+{"line_map": {"65": 13, "73": 13, "74": 17, "75": 18, "76": 18, "77": 18, "78": 20, "79": 22, "80": 23, "81": 23, "82": 23, "83": 25, "84": 55, "85": 56, "86": 56, "87": 56, "88": 58, "89": 60, "90": 61, "27": 0, "92": 61, "93": 63, "91": 61, "38": 2, "43": 12, "99": 93, "53": 3, "59": 3}, "source_encoding": "utf-8", "filename": "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/View/template/index.html", "uri": "index.html"}
 __M_END_METADATA
 """

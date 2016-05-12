@@ -1,34 +1,58 @@
 ## -*- coding: utf-8 -*-
 <%inherit file="base.html" />
 <%block name="container">
-<form method="post" action="/manga/add/">
-    <input type="text" name="titre">
-    <textarea name="description"></textarea>
-    <select name="scenariste">
-        %for scenariste in scenaristes:
-        <option value="${scenariste.scenariste}">${scenariste.scenariste}</option>
-        %endfor
-    </select>
-    <select name="dessinateur">
-        %for dessinateur in dessinateurs:
-        <option value="${dessinateur.dessinateur}">${dessinateur.dessinateur}</option>
-        %endfor
-    </select>
-    <select name="editeur">
-        %for editeur in editeurs:
-        <option value="${editeur.editeur}">${editeur.editeur}</option>
-        %endfor
-    </select>
-    <select name="statut">
-        <option value="En cours">En cours</option>
-        <option value="En pause">En pause</option>
-        <option value="Terminé">Terminé</option>
-    </select>
-    <select name="genre">
-        %for genre in genres:
-        <option value="${genre.genre}">${genre.genre}</option>
-        %endfor
-    </select>
-    <input type="submit" value="Ajouter ce manga">
-</form>
+<div class="container">
+    <form method="post" action="/manga/add/">
+
+        <div class="form-group">
+            <label for="titre">Titre</label>
+            <input class="form-control" type="text" name="titre" id="titre" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control" name="description" id="description"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="scenariste">Scenariste</label>
+            <select class="form-control" name="scenariste" id="scenariste"  required>
+                %for scenariste in scenaristes:
+                <option value="${scenariste.scenariste}">${scenariste.scenariste}</option>
+                %endfor
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="dessinateur">Name</label>
+            <select class="form-control" name="dessinateur" id="dessinateur" required>
+                %for dessinateur in dessinateurs:
+                <option value="${dessinateur.dessinateur}">${dessinateur.dessinateur}</option>
+                %endfor
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="editeur">Editeur</label>
+            <select class="form-control" name="editeur" id="editeur" required>
+                %for editeur in editeurs:
+                <option value="${editeur.editeur}">${editeur.editeur}</option>
+                %endfor
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="statut">Statut</label>
+            <select class="form-control" name="statut" id="statut" required>
+                <option value="En cours">En cours</option>
+                <option value="En pause">En pause</option>
+                <option value="Terminé">Terminé</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="genre">Genre</label>
+            <select class="form-control" name="genre" id="genre" required>
+                %for genre in genres:
+                <option value="${genre.genre}">${genre.genre}</option>
+                %endfor
+            </select>
+        </div>
+        <input type="submit" class="btn btn-success block-center" value="Ajouter ce manga">
+    </form>
+</div>
 </%block>

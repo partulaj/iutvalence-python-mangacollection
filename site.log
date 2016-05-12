@@ -3212,3 +3212,833 @@ sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: mang
 [12/May/2016:01:18:26] ENGINE Started monitor thread '_TimeoutMonitor'.
 [12/May/2016:01:18:26] ENGINE Serving on http://127.0.0.1:8080
 [12/May/2016:01:18:26] ENGINE Bus STARTED
+[12/May/2016:07:37:52] ENGINE Listening for SIGTERM.
+[12/May/2016:07:37:52] ENGINE Bus STARTING
+[12/May/2016:07:37:52] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:07:37:52] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:07:37:52] ENGINE Bus STARTED
+[12/May/2016:07:38:25] ENGINE Listening for SIGTERM.
+[12/May/2016:07:38:25] ENGINE Bus STARTING
+[12/May/2016:07:38:25] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:07:38:26] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:07:38:26] ENGINE Bus STARTED
+[12/May/2016:07:40:39] ENGINE Listening for SIGTERM.
+[12/May/2016:07:40:39] ENGINE Bus STARTING
+[12/May/2016:07:40:39] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:07:40:39] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:07:40:39] ENGINE Bus STARTED
+[12/May/2016:07:42:42] ENGINE Listening for SIGTERM.
+[12/May/2016:07:42:42] ENGINE Bus STARTING
+[12/May/2016:07:42:42] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:07:42:43] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:07:42:43] ENGINE Bus STARTED
+[12/May/2016:07:51:12] ENGINE Listening for SIGTERM.
+[12/May/2016:07:51:12] ENGINE Bus STARTING
+[12/May/2016:07:51:12] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:07:51:12] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:07:51:12] ENGINE Bus STARTED
+[12/May/2016:07:52:03] ENGINE Listening for SIGTERM.
+[12/May/2016:07:52:03] ENGINE Bus STARTING
+[12/May/2016:07:52:03] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:07:52:03] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:07:52:03] ENGINE Bus STARTED
+[12/May/2016:08:00:40] ENGINE Listening for SIGTERM.
+[12/May/2016:08:00:40] ENGINE Bus STARTING
+[12/May/2016:08:00:40] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:08:00:41] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:08:00:41] ENGINE Bus STARTED
+[12/May/2016:08:19:01] ENGINE Listening for SIGTERM.
+[12/May/2016:08:19:01] ENGINE Bus STARTING
+[12/May/2016:08:19:01] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:08:19:02] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:08:19:02] ENGINE Bus STARTED
+[12/May/2016:08:20:31] ENGINE Listening for SIGTERM.
+[12/May/2016:08:20:31] ENGINE Bus STARTING
+[12/May/2016:08:20:31] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:08:20:32] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:08:20:32] ENGINE Bus STARTED
+[12/May/2016:08:20:51] HTTP 
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cprequest.py", line 670, in respond
+    response.body = self.handler()
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\lib\encoding.py", line 217, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 60, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/server.py", line 111, in shopping_list_comfirm
+    tomes = db.retrieveTome()
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\Core\Database.py", line 109, in retrieveTome
+    obj = self.session.query(type).all()
+  File "C:\Program Files\Python\lib\site-packages\sqlalchemy\orm\session.py", line 1260, in query
+    return self._query_cls(entities, self, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\sqlalchemy\orm\query.py", line 110, in __init__
+    self._set_entities(entities)
+  File "C:\Program Files\Python\lib\site-packages\sqlalchemy\orm\query.py", line 118, in _set_entities
+    entity_wrapper(self, ent)
+  File "C:\Program Files\Python\lib\site-packages\sqlalchemy\orm\query.py", line 3804, in __init__
+    "expected - got '%r'" % (column, )
+sqlalchemy.exc.InvalidRequestError: SQL expression, column, or mapped entity expected - got '<class 'type'>'
+[12/May/2016:08:22:07] ENGINE Listening for SIGTERM.
+[12/May/2016:08:22:07] ENGINE Bus STARTING
+[12/May/2016:08:22:07] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:08:22:07] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:08:22:07] ENGINE Bus STARTED
+[12/May/2016:08:23:50] ENGINE Listening for SIGTERM.
+[12/May/2016:08:23:50] ENGINE Bus STARTING
+[12/May/2016:08:23:50] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:08:23:50] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:08:23:50] ENGINE Bus STARTED
+[12/May/2016:08:24:50] ENGINE Listening for SIGTERM.
+[12/May/2016:08:24:50] ENGINE Bus STARTING
+[12/May/2016:08:24:50] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:08:24:50] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:08:24:50] ENGINE Bus STARTED
+[12/May/2016:08:27:43] ENGINE Listening for SIGTERM.
+[12/May/2016:08:27:43] ENGINE Bus STARTING
+[12/May/2016:08:27:43] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:08:27:43] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:08:27:43] ENGINE Bus STARTED
+[12/May/2016:08:28:25] ENGINE Listening for SIGTERM.
+[12/May/2016:08:28:25] ENGINE Bus STARTING
+[12/May/2016:08:28:25] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:08:28:25] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:08:28:25] ENGINE Bus STARTED
+[12/May/2016:08:30:56] ENGINE Listening for SIGTERM.
+[12/May/2016:08:30:56] ENGINE Bus STARTING
+[12/May/2016:08:30:56] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:08:30:56] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:08:30:56] ENGINE Bus STARTED
+[12/May/2016:08:31:24] ENGINE Listening for SIGTERM.
+[12/May/2016:08:31:24] ENGINE Bus STARTING
+[12/May/2016:08:31:24] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:08:31:24] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:08:31:24] ENGINE Bus STARTED
+[12/May/2016:08:31:53] ENGINE Listening for SIGTERM.
+[12/May/2016:08:31:53] ENGINE Bus STARTING
+[12/May/2016:08:31:53] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:08:31:53] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:08:31:53] ENGINE Bus STARTED
+[12/May/2016:08:32:04] ENGINE Listening for SIGTERM.
+[12/May/2016:08:32:04] ENGINE Bus STARTING
+[12/May/2016:08:32:04] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:08:32:05] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:08:32:05] ENGINE Bus STARTED
+[12/May/2016:08:32:22] ENGINE Listening for SIGTERM.
+[12/May/2016:08:32:22] ENGINE Bus STARTING
+[12/May/2016:08:32:22] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:08:32:23] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:08:32:23] ENGINE Bus STARTED
+[12/May/2016:08:33:21] ENGINE Listening for SIGTERM.
+[12/May/2016:08:33:21] ENGINE Bus STARTING
+[12/May/2016:08:33:21] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:08:33:21] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:08:33:21] ENGINE Bus STARTED
+[12/May/2016:08:33:36] ENGINE Listening for SIGTERM.
+[12/May/2016:08:33:36] ENGINE Bus STARTING
+[12/May/2016:08:33:36] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:08:33:36] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:08:33:36] ENGINE Bus STARTED
+[12/May/2016:08:34:04] ENGINE Listening for SIGTERM.
+[12/May/2016:08:34:04] ENGINE Bus STARTING
+[12/May/2016:08:34:04] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:08:34:04] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:08:34:04] ENGINE Bus STARTED
+[12/May/2016:08:38:11] ENGINE Listening for SIGTERM.
+[12/May/2016:08:38:11] ENGINE Bus STARTING
+[12/May/2016:08:38:11] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:08:38:12] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:08:38:12] ENGINE Bus STARTED
+[12/May/2016:08:45:33] ENGINE Listening for SIGTERM.
+[12/May/2016:08:45:33] ENGINE Bus STARTING
+[12/May/2016:08:45:33] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:08:45:34] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:08:45:34] ENGINE Bus STARTED
+[12/May/2016:08:57:44] ENGINE Listening for SIGTERM.
+[12/May/2016:08:57:44] ENGINE Bus STARTING
+[12/May/2016:08:57:44] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:08:57:44] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:08:57:44] ENGINE Bus STARTED
+[12/May/2016:08:57:48] HTTP 
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cprequest.py", line 670, in respond
+    response.body = self.handler()
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\lib\encoding.py", line 217, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 60, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/server.py", line 141, in manga_detail
+    return _manga_detail.render_unicode(manga = manga)
+  File "C:\Program Files\Python\lib\site-packages\mako\template.py", line 454, in render_unicode
+    as_unicode=True)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 829, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 864, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 890, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\base.html.py", line 27, in render_body
+    context['self'].container(**pageargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\manga_detail.html.py", line 133, in render_container
+    __M_writer(str(manga.commentaire.titre))
+AttributeError: 'InstrumentedList' object has no attribute 'titre'
+[12/May/2016:08:58:38] ENGINE Listening for SIGTERM.
+[12/May/2016:08:58:38] ENGINE Bus STARTING
+[12/May/2016:08:58:38] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:08:58:38] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:08:58:38] ENGINE Bus STARTED
+[12/May/2016:08:58:49] ENGINE Listening for SIGTERM.
+[12/May/2016:08:58:49] ENGINE Bus STARTING
+[12/May/2016:08:58:49] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:08:58:49] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:08:58:49] ENGINE Bus STARTED
+[12/May/2016:08:58:51] HTTP 
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cprequest.py", line 670, in respond
+    response.body = self.handler()
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\lib\encoding.py", line 217, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 60, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/server.py", line 142, in manga_detail
+    return _manga_detail.render_unicode(manga = manga)
+  File "C:\Program Files\Python\lib\site-packages\mako\template.py", line 454, in render_unicode
+    as_unicode=True)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 829, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 864, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 890, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\base.html.py", line 27, in render_body
+    context['self'].container(**pageargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\manga_detail.html.py", line 133, in render_container
+    __M_writer(str(manga.commentaire.titre))
+AttributeError: 'InstrumentedList' object has no attribute 'titre'
+[12/May/2016:08:59:19] ENGINE Listening for SIGTERM.
+[12/May/2016:08:59:19] ENGINE Bus STARTING
+[12/May/2016:08:59:19] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:08:59:19] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:08:59:19] ENGINE Bus STARTED
+[12/May/2016:08:59:22] HTTP 
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cprequest.py", line 670, in respond
+    response.body = self.handler()
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\lib\encoding.py", line 217, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 60, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/server.py", line 142, in manga_detail
+    return _manga_detail.render_unicode(manga = manga)
+  File "C:\Program Files\Python\lib\site-packages\mako\template.py", line 454, in render_unicode
+    as_unicode=True)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 829, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 864, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 890, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\base.html.py", line 27, in render_body
+    context['self'].container(**pageargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\manga_detail.html.py", line 133, in render_container
+    __M_writer(str(manga.commentaire.titre))
+AttributeError: 'InstrumentedList' object has no attribute 'titre'
+[12/May/2016:09:00:28] ENGINE Listening for SIGTERM.
+[12/May/2016:09:00:28] ENGINE Bus STARTING
+[12/May/2016:09:00:28] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:09:00:29] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:09:00:29] ENGINE Bus STARTED
+[12/May/2016:09:01:00] ENGINE Listening for SIGTERM.
+[12/May/2016:09:01:00] ENGINE Bus STARTING
+[12/May/2016:09:01:00] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:09:01:01] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:09:01:01] ENGINE Bus STARTED
+[12/May/2016:09:01:31] ENGINE Listening for SIGTERM.
+[12/May/2016:09:01:31] ENGINE Bus STARTING
+[12/May/2016:09:01:31] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:09:01:32] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:09:01:32] ENGINE Bus STARTED
+[12/May/2016:09:01:44] ENGINE Listening for SIGTERM.
+[12/May/2016:09:01:44] ENGINE Bus STARTING
+[12/May/2016:09:01:44] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:09:01:44] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:09:01:44] ENGINE Bus STARTED
+[12/May/2016:09:03:33] ENGINE Listening for SIGTERM.
+[12/May/2016:09:03:33] ENGINE Bus STARTING
+[12/May/2016:09:03:33] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:09:03:33] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:09:03:33] ENGINE Bus STARTED
+[12/May/2016:09:03:59] ENGINE Listening for SIGTERM.
+[12/May/2016:09:03:59] ENGINE Bus STARTING
+[12/May/2016:09:03:59] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:09:03:59] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:09:03:59] ENGINE Bus STARTED
+[12/May/2016:09:04:04] HTTP 
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cprequest.py", line 670, in respond
+    response.body = self.handler()
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\lib\encoding.py", line 217, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 60, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/server.py", line 141, in manga_detail
+    return _manga_detail.render_unicode(manga = manga)
+  File "C:\Program Files\Python\lib\site-packages\mako\template.py", line 454, in render_unicode
+    as_unicode=True)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 829, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 864, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 890, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\base.html.py", line 27, in render_body
+    context['self'].container(**pageargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\manga_detail.html.py", line 135, in render_container
+    __M_writer(str(manga.commentaire.titre))
+AttributeError: 'InstrumentedList' object has no attribute 'titre'
+[12/May/2016:09:05:35] ENGINE Listening for SIGTERM.
+[12/May/2016:09:05:35] ENGINE Bus STARTING
+[12/May/2016:09:05:35] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:09:05:35] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:09:05:35] ENGINE Bus STARTED
+[12/May/2016:09:05:38] HTTP 
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cprequest.py", line 670, in respond
+    response.body = self.handler()
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\lib\encoding.py", line 217, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 60, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/server.py", line 141, in manga_detail
+    print('Commentaire : '+manga.commentaire)
+TypeError: Can't convert 'InstrumentedList' object to str implicitly
+[12/May/2016:09:06:26] ENGINE Listening for SIGTERM.
+[12/May/2016:09:06:26] ENGINE Bus STARTING
+[12/May/2016:09:06:26] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:09:06:27] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:09:06:27] ENGINE Bus STARTED
+[12/May/2016:09:06:30] HTTP 
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cprequest.py", line 670, in respond
+    response.body = self.handler()
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\lib\encoding.py", line 217, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 60, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/server.py", line 142, in manga_detail
+    return _manga_detail.render_unicode(manga = manga)
+  File "C:\Program Files\Python\lib\site-packages\mako\template.py", line 454, in render_unicode
+    as_unicode=True)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 829, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 864, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 890, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\base.html.py", line 27, in render_body
+    context['self'].container(**pageargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\manga_detail.html.py", line 135, in render_container
+    __M_writer(str(manga.commentaire.titre))
+AttributeError: 'InstrumentedList' object has no attribute 'titre'
+[12/May/2016:09:06:32] HTTP 
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cprequest.py", line 670, in respond
+    response.body = self.handler()
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\lib\encoding.py", line 217, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 60, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/server.py", line 142, in manga_detail
+    return _manga_detail.render_unicode(manga = manga)
+  File "C:\Program Files\Python\lib\site-packages\mako\template.py", line 454, in render_unicode
+    as_unicode=True)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 829, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 864, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 890, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\base.html.py", line 27, in render_body
+    context['self'].container(**pageargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\manga_detail.html.py", line 135, in render_container
+    __M_writer(str(manga.commentaire.titre))
+AttributeError: 'InstrumentedList' object has no attribute 'titre'
+[12/May/2016:09:06:53] HTTP 
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cprequest.py", line 670, in respond
+    response.body = self.handler()
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\lib\encoding.py", line 217, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 60, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/server.py", line 142, in manga_detail
+    return _manga_detail.render_unicode(manga = manga)
+  File "C:\Program Files\Python\lib\site-packages\mako\template.py", line 454, in render_unicode
+    as_unicode=True)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 829, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 864, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 890, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\base.html.py", line 27, in render_body
+    context['self'].container(**pageargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\manga_detail.html.py", line 135, in render_container
+    __M_writer(str(manga.commentaire.titre))
+AttributeError: 'InstrumentedList' object has no attribute 'titre'
+[12/May/2016:09:07:09] ENGINE Listening for SIGTERM.
+[12/May/2016:09:07:09] ENGINE Bus STARTING
+[12/May/2016:09:07:09] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:09:07:09] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:09:07:09] ENGINE Bus STARTED
+[12/May/2016:09:07:09] HTTP 
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cprequest.py", line 670, in respond
+    response.body = self.handler()
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\lib\encoding.py", line 217, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 60, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/server.py", line 141, in manga_detail
+    print(manga.commentaire.titre)
+AttributeError: 'InstrumentedList' object has no attribute 'titre'
+[12/May/2016:09:08:12] ENGINE Listening for SIGTERM.
+[12/May/2016:09:08:12] ENGINE Bus STARTING
+[12/May/2016:09:08:12] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:09:08:13] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:09:08:13] ENGINE Bus STARTED
+[12/May/2016:09:08:15] HTTP 
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cprequest.py", line 670, in respond
+    response.body = self.handler()
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\lib\encoding.py", line 217, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 60, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/server.py", line 141, in manga_detail
+    return _manga_detail.render_unicode(manga = manga)
+  File "C:\Program Files\Python\lib\site-packages\mako\template.py", line 454, in render_unicode
+    as_unicode=True)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 829, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 864, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 890, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\base.html.py", line 27, in render_body
+    context['self'].container(**pageargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\manga_detail.html.py", line 59, in render_container
+    __M_writer(str(manga.titre))
+AttributeError: 'NoneType' object has no attribute 'titre'
+[12/May/2016:09:10:45] ENGINE Listening for SIGTERM.
+[12/May/2016:09:10:45] ENGINE Bus STARTING
+[12/May/2016:09:10:45] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:09:10:46] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:09:10:46] ENGINE Bus STARTED
+[12/May/2016:09:13:17] ENGINE Listening for SIGTERM.
+[12/May/2016:09:13:17] ENGINE Bus STARTING
+[12/May/2016:09:13:17] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:09:13:18] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:09:13:18] ENGINE Bus STARTED
+[12/May/2016:09:16:39] ENGINE Listening for SIGTERM.
+[12/May/2016:09:16:39] ENGINE Bus STARTING
+[12/May/2016:09:16:39] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:09:16:39] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:09:16:39] ENGINE Bus STARTED
+[12/May/2016:09:30:27] ENGINE Listening for SIGTERM.
+[12/May/2016:09:30:27] ENGINE Bus STARTING
+[12/May/2016:09:30:27] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:09:30:28] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:09:30:28] ENGINE Bus STARTED
+[12/May/2016:09:30:42] ENGINE Listening for SIGTERM.
+[12/May/2016:09:30:42] ENGINE Bus STARTING
+[12/May/2016:09:30:42] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:09:30:43] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:09:30:43] ENGINE Bus STARTED
+[12/May/2016:09:31:17] ENGINE Listening for SIGTERM.
+[12/May/2016:09:31:17] ENGINE Bus STARTING
+[12/May/2016:09:31:17] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:09:31:17] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:09:31:17] ENGINE Bus STARTED
+[12/May/2016:09:44:04] ENGINE Listening for SIGTERM.
+[12/May/2016:09:44:04] ENGINE Bus STARTING
+[12/May/2016:09:44:04] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:09:44:04] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:09:44:04] ENGINE Bus STARTED
+[12/May/2016:09:47:21] ENGINE Listening for SIGTERM.
+[12/May/2016:09:47:21] ENGINE Bus STARTING
+[12/May/2016:09:47:21] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:09:47:21] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:09:47:21] ENGINE Bus STARTED
+[12/May/2016:09:50:46] ENGINE Listening for SIGTERM.
+[12/May/2016:09:50:46] ENGINE Bus STARTING
+[12/May/2016:09:50:46] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:09:50:46] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:09:50:46] ENGINE Bus STARTED
+[12/May/2016:09:53:32] ENGINE Listening for SIGTERM.
+[12/May/2016:09:53:32] ENGINE Bus STARTING
+[12/May/2016:09:53:32] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:09:53:32] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:09:53:32] ENGINE Bus STARTED
+[12/May/2016:09:54:01] HTTP 
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cprequest.py", line 670, in respond
+    response.body = self.handler()
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\lib\encoding.py", line 217, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 60, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/server.py", line 141, in manga_detail
+    return _manga_detail.render_unicode(manga = manga)
+  File "C:\Program Files\Python\lib\site-packages\mako\template.py", line 454, in render_unicode
+    as_unicode=True)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 829, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 864, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 890, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\base.html.py", line 27, in render_body
+    context['self'].container(**pageargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\manga_detail.html.py", line 74, in render_container
+    __M_writer(str(manga.date_parution))
+AttributeError: 'Manga' object has no attribute 'date_parution'
+[12/May/2016:09:55:18] ENGINE Listening for SIGTERM.
+[12/May/2016:09:55:18] ENGINE Bus STARTING
+[12/May/2016:09:55:18] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:09:55:18] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:09:55:18] ENGINE Bus STARTED
+[12/May/2016:09:56:43] HTTP 
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cprequest.py", line 670, in respond
+    response.body = self.handler()
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\lib\encoding.py", line 217, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 60, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/server.py", line 141, in manga_detail
+    return _manga_detail.render_unicode(manga = manga)
+  File "C:\Program Files\Python\lib\site-packages\mako\template.py", line 454, in render_unicode
+    as_unicode=True)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 829, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 864, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 890, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\base.html.py", line 27, in render_body
+    context['self'].container(**pageargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\manga_detail.html.py", line 135, in render_container
+    __M_writer(str(manga.commentaire.titre))
+AttributeError: 'InstrumentedList' object has no attribute 'titre'
+[12/May/2016:09:59:54] ENGINE Listening for SIGTERM.
+[12/May/2016:09:59:54] ENGINE Bus STARTING
+[12/May/2016:09:59:54] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:09:59:54] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:09:59:54] ENGINE Bus STARTED
+[12/May/2016:09:59:54] HTTP 
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cprequest.py", line 670, in respond
+    response.body = self.handler()
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\lib\encoding.py", line 217, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 60, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/server.py", line 142, in manga_detail
+    return _manga_detail.render_unicode(manga = manga)
+  File "C:\Program Files\Python\lib\site-packages\mako\template.py", line 454, in render_unicode
+    as_unicode=True)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 829, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 864, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 890, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\base.html.py", line 27, in render_body
+    context['self'].container(**pageargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\manga_detail.html.py", line 135, in render_container
+    __M_writer(str(manga.commentaire.titre))
+AttributeError: 'InstrumentedList' object has no attribute 'titre'
+[12/May/2016:10:03:42] ENGINE Listening for SIGTERM.
+[12/May/2016:10:03:42] ENGINE Bus STARTING
+[12/May/2016:10:03:42] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:10:03:42] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:10:03:42] ENGINE Bus STARTED
+[12/May/2016:10:04:06] ENGINE Listening for SIGTERM.
+[12/May/2016:10:04:06] ENGINE Bus STARTING
+[12/May/2016:10:04:06] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:10:04:06] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:10:04:06] ENGINE Bus STARTED
+[12/May/2016:10:04:10] HTTP 
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cprequest.py", line 670, in respond
+    response.body = self.handler()
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\lib\encoding.py", line 217, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 60, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/server.py", line 142, in manga_detail
+    return _manga_detail.render_unicode(manga = manga)
+  File "C:\Program Files\Python\lib\site-packages\mako\template.py", line 454, in render_unicode
+    as_unicode=True)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 829, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 864, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 890, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\base.html.py", line 27, in render_body
+    context['self'].container(**pageargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\manga_detail.html.py", line 135, in render_container
+    __M_writer(str(manga.commentaire.titre))
+AttributeError: 'InstrumentedList' object has no attribute 'titre'
+[12/May/2016:10:04:10] HTTP 
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cprequest.py", line 670, in respond
+    response.body = self.handler()
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\lib\encoding.py", line 217, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 60, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/server.py", line 142, in manga_detail
+    return _manga_detail.render_unicode(manga = manga)
+  File "C:\Program Files\Python\lib\site-packages\mako\template.py", line 454, in render_unicode
+    as_unicode=True)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 829, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 864, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 890, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\base.html.py", line 27, in render_body
+    context['self'].container(**pageargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\manga_detail.html.py", line 135, in render_container
+    __M_writer(str(manga.commentaire.titre))
+AttributeError: 'InstrumentedList' object has no attribute 'titre'
+[12/May/2016:10:04:11] HTTP 
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cprequest.py", line 670, in respond
+    response.body = self.handler()
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\lib\encoding.py", line 217, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 60, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/server.py", line 142, in manga_detail
+    return _manga_detail.render_unicode(manga = manga)
+  File "C:\Program Files\Python\lib\site-packages\mako\template.py", line 454, in render_unicode
+    as_unicode=True)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 829, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 864, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 890, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\base.html.py", line 27, in render_body
+    context['self'].container(**pageargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\manga_detail.html.py", line 135, in render_container
+    __M_writer(str(manga.commentaire.titre))
+AttributeError: 'InstrumentedList' object has no attribute 'titre'
+[12/May/2016:10:04:11] HTTP 
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cprequest.py", line 670, in respond
+    response.body = self.handler()
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\lib\encoding.py", line 217, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 60, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/server.py", line 142, in manga_detail
+    return _manga_detail.render_unicode(manga = manga)
+  File "C:\Program Files\Python\lib\site-packages\mako\template.py", line 454, in render_unicode
+    as_unicode=True)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 829, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 864, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 890, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\base.html.py", line 27, in render_body
+    context['self'].container(**pageargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\manga_detail.html.py", line 135, in render_container
+    __M_writer(str(manga.commentaire.titre))
+AttributeError: 'InstrumentedList' object has no attribute 'titre'
+[12/May/2016:10:05:15] ENGINE Listening for SIGTERM.
+[12/May/2016:10:05:15] ENGINE Bus STARTING
+[12/May/2016:10:05:15] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:10:05:15] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:10:05:15] ENGINE Bus STARTED
+[12/May/2016:10:05:18] HTTP 
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cprequest.py", line 670, in respond
+    response.body = self.handler()
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\lib\encoding.py", line 217, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 60, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/server.py", line 142, in manga_detail
+    return _manga_detail.render_unicode(manga = manga)
+  File "C:\Program Files\Python\lib\site-packages\mako\template.py", line 454, in render_unicode
+    as_unicode=True)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 829, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 864, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 890, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\base.html.py", line 27, in render_body
+    context['self'].container(**pageargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\manga_detail.html.py", line 135, in render_container
+    __M_writer(str(manga.commentaire.titre))
+AttributeError: 'InstrumentedList' object has no attribute 'titre'
+[12/May/2016:10:06:38] ENGINE Listening for SIGTERM.
+[12/May/2016:10:06:38] ENGINE Bus STARTING
+[12/May/2016:10:06:38] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:10:06:38] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:10:06:38] ENGINE Bus STARTED
+[12/May/2016:10:06:42] HTTP 
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cprequest.py", line 670, in respond
+    response.body = self.handler()
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\lib\encoding.py", line 217, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 60, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/server.py", line 142, in manga_detail
+    return _manga_detail.render_unicode(manga = manga)
+  File "C:\Program Files\Python\lib\site-packages\mako\template.py", line 454, in render_unicode
+    as_unicode=True)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 829, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 864, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 890, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\base.html.py", line 27, in render_body
+    context['self'].container(**pageargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\manga_detail.html.py", line 135, in render_container
+    __M_writer(str(manga.commentaire.titre))
+AttributeError: 'InstrumentedList' object has no attribute 'titre'
+[12/May/2016:10:10:37] ENGINE Listening for SIGTERM.
+[12/May/2016:10:10:37] ENGINE Bus STARTING
+[12/May/2016:10:10:37] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:10:10:38] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:10:10:38] ENGINE Bus STARTED
+[12/May/2016:10:10:51] HTTP 
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cprequest.py", line 670, in respond
+    response.body = self.handler()
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\lib\encoding.py", line 217, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 60, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/server.py", line 142, in manga_detail
+    return _manga_detail.render_unicode(manga = manga, commentaire=commentaire)
+  File "C:\Program Files\Python\lib\site-packages\mako\template.py", line 454, in render_unicode
+    as_unicode=True)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 829, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 864, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 890, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\base.html.py", line 27, in render_body
+    context['self'].container(**pageargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\manga_detail.html.py", line 135, in render_container
+    __M_writer(str(commentaire.titre))
+AttributeError: 'NoneType' object has no attribute 'titre'
+[12/May/2016:10:11:16] ENGINE Listening for SIGTERM.
+[12/May/2016:10:11:16] ENGINE Bus STARTING
+[12/May/2016:10:11:16] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:10:11:17] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:10:11:17] ENGINE Bus STARTED
+[12/May/2016:10:11:17] HTTP 
+Traceback (most recent call last):
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cprequest.py", line 670, in respond
+    response.body = self.handler()
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\lib\encoding.py", line 217, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File "C:\Program Files\Python\lib\site-packages\cherrypy\_cpdispatch.py", line 60, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/server.py", line 143, in manga_detail
+    return _manga_detail.render_unicode(manga = manga, commentaire=commentaire)
+  File "C:\Program Files\Python\lib\site-packages\mako\template.py", line 454, in render_unicode
+    as_unicode=True)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 829, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 864, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "C:\Program Files\Python\lib\site-packages\mako\runtime.py", line 890, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\base.html.py", line 27, in render_body
+    context['self'].container(**pageargs)
+  File "C:\Users\jerem\Documents\Workspace\iutvalence-python-mangacollection\View\tmp\mako_modules\manga_detail.html.py", line 135, in render_container
+    __M_writer(str(commentaire.titre))
+AttributeError: 'NoneType' object has no attribute 'titre'
+[12/May/2016:10:12:07] ENGINE Listening for SIGTERM.
+[12/May/2016:10:12:07] ENGINE Bus STARTING
+[12/May/2016:10:12:07] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:10:12:07] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:10:12:07] ENGINE Bus STARTED
+[12/May/2016:10:21:42] ENGINE Listening for SIGTERM.
+[12/May/2016:10:21:42] ENGINE Bus STARTING
+[12/May/2016:10:21:42] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:10:21:42] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:10:21:42] ENGINE Bus STARTED
+[12/May/2016:10:33:47] ENGINE Listening for SIGTERM.
+[12/May/2016:10:33:47] ENGINE Bus STARTING
+[12/May/2016:10:33:47] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:10:33:47] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:10:33:47] ENGINE Bus STARTED
+[12/May/2016:10:38:30] ENGINE Listening for SIGTERM.
+[12/May/2016:10:38:30] ENGINE Bus STARTING
+[12/May/2016:10:38:30] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:10:38:30] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:10:38:30] ENGINE Bus STARTED
+[12/May/2016:10:41:00] ENGINE Listening for SIGTERM.
+[12/May/2016:10:41:00] ENGINE Bus STARTING
+[12/May/2016:10:41:00] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:10:41:01] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:10:41:01] ENGINE Bus STARTED
+[12/May/2016:10:41:30] ENGINE Listening for SIGTERM.
+[12/May/2016:10:41:30] ENGINE Bus STARTING
+[12/May/2016:10:41:30] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:10:41:30] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:10:41:30] ENGINE Bus STARTED
+[12/May/2016:10:42:17] ENGINE Listening for SIGTERM.
+[12/May/2016:10:42:17] ENGINE Bus STARTING
+[12/May/2016:10:42:17] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:10:42:18] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:10:42:18] ENGINE Bus STARTED
+[12/May/2016:10:45:34] ENGINE Listening for SIGTERM.
+[12/May/2016:10:45:34] ENGINE Bus STARTING
+[12/May/2016:10:45:34] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:10:45:34] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:10:45:34] ENGINE Bus STARTED
+[12/May/2016:10:46:42] ENGINE Listening for SIGTERM.
+[12/May/2016:10:46:42] ENGINE Bus STARTING
+[12/May/2016:10:46:42] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:10:46:42] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:10:46:42] ENGINE Bus STARTED
+[12/May/2016:10:50:10] ENGINE Listening for SIGTERM.
+[12/May/2016:10:50:10] ENGINE Bus STARTING
+[12/May/2016:10:50:10] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:10:50:10] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:10:50:10] ENGINE Bus STARTED
+[12/May/2016:10:53:15] ENGINE Listening for SIGTERM.
+[12/May/2016:10:53:15] ENGINE Bus STARTING
+[12/May/2016:10:53:15] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:10:53:15] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:10:53:15] ENGINE Bus STARTED
+[12/May/2016:11:04:00] ENGINE Listening for SIGTERM.
+[12/May/2016:11:04:00] ENGINE Bus STARTING
+[12/May/2016:11:04:00] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:11:04:01] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:11:04:01] ENGINE Bus STARTED
+[12/May/2016:11:07:32] ENGINE Listening for SIGTERM.
+[12/May/2016:11:07:32] ENGINE Bus STARTING
+[12/May/2016:11:07:32] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:11:07:33] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:11:07:33] ENGINE Bus STARTED
+[12/May/2016:11:08:45] ENGINE Listening for SIGTERM.
+[12/May/2016:11:08:45] ENGINE Bus STARTING
+[12/May/2016:11:08:45] ENGINE Started monitor thread '_TimeoutMonitor'.
+[12/May/2016:11:08:45] ENGINE Serving on http://127.0.0.1:8080
+[12/May/2016:11:08:45] ENGINE Bus STARTED

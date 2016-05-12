@@ -2,9 +2,16 @@
 <%inherit file="base.html" />
 <%block name="container">
 <div class="container">
-    <div>${total} €</div>
+    <div class="row">
+        <div class="thumbnail col-xs-12 col-md-4 col-md-offset-4">
+            <div class="caption text-center">
+                <h3>Estimation de la collection</h3>
+                <h1>${total} €</h1>
+            </div>
+        </div>
+    </div>
+    <div class="row">
     %for manga in mangas:
-    <!--<div class="row">-->
     %for tome in manga.tomes:
     %if tome.possede == True:
     <div class="col-xs-6 col-md-3">
@@ -14,7 +21,7 @@
     </div>
     %endif
     %endfor
-    <!--</div>-->
     %endfor
+    </div>
 </div>
 </%block>

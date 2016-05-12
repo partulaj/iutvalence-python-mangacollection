@@ -1,10 +1,9 @@
-import routes
 import cherrypy
 import inspect, os
-from mako.template import Template
 from mako.lookup import TemplateLookup
 from Core.Database import Database
 from models import *
+from math import *
 
 try:
     _curdir = os.path.join(os.getcwd(), os.path.dirname(os.path.abspath(__file__)))
@@ -25,6 +24,7 @@ mylookup = TemplateLookup(directories=[myTemplatesDir], module_directory=myModul
 _index = mylookup.get_template("index.html")
 _collection = mylookup.get_template("collection.html")
 _shopping_list = mylookup.get_template("shopping_list.html")
+_no_category = mylookup.get_template("no_category.html")
 _search = mylookup.get_template("search.html")
 
 _manga_list = mylookup.get_template("manga_list.html")
@@ -61,9 +61,32 @@ class App:
     @cherrypy.expose
     def index(self):
         db = Database()
-        genres = db.genreChartData()
-        editeurs = db.editeurChartData()
-        return _index.render_unicode(genres = genres, editeurs = editeurs)
+        genreChart = []
+        editeurChart = []
+        genres = db.retrieve(Genre)
+        editeurs = db.retrieve(Editeur)
+        mangas = db.retrieve(Manga)
+        for genre in genres:
+            compteur = 0
+            for manga in mangas:
+                if manga.genre == genre.genre:
+                    for tome in manga.tomes:
+                        if tome.possede == True:
+                            compteur += 1
+            if compteur > 0:
+                tuple = (genre.genre, compteur)
+                genreChart.append(tuple)
+        for editeur in editeurs:
+            compteur = 0
+            for manga in mangas:
+                if manga.editeur == editeur.editeur:
+                    for tome in manga.tomes:
+                        if tome.possede == True:
+                            compteur += 1
+            if compteur >0:
+                tuple = (editeur.editeur, compteur)
+                editeurChart.append(tuple)
+        return _index.render_unicode(genres = genreChart, editeurs = editeurChart)
 
     def collection(self):
         db = Database()
@@ -73,12 +96,34 @@ class App:
             for tome in manga.tomes:
                 if tome.possede == True:
                     total+= tome.prix
+        total = ceil(total)
         return _collection.render_unicode(mangas=mangas, total=total)
 
     def shopping_list(self):
         db = Database()
         mangas = db.retrieve(Manga)
-        return _shopping_list.render_unicode(mangas = mangas)
+        total = 0
+        for manga in mangas:
+            for tome in manga.tomes:
+                if tome.a_acheter == True:
+                    total+= tome.prix
+        total = ceil(total)
+        return _shopping_list.render_unicode(mangas = mangas, total=total)
+
+    def shopping_list_comfirm(self):
+        db = Database()
+        tomes = db.retrieveTome()
+        for tome in tomes:
+            if tome.a_acheter == True:
+                tome.a_acheter = False
+                tome.possede = True
+        db.update()
+        raise cherrypy.HTTPRedirect('/')
+
+    def no_category(self):
+        db = Database()
+        mangas = db.retrieve(Manga)
+        return _no_category.render_unicode(mangas = mangas)
 
 class MangaController:
 
@@ -92,7 +137,8 @@ class MangaController:
     def manga_detail(self, id):
         db = Database()
         manga = db.retrieve(Manga, Manga.id, id)
-        return _manga_detail.render_unicode(manga = manga)
+        commentaire = db.retrieve(Commentaire, Commentaire.id, manga.id)
+        return _manga_detail.render_unicode(manga = manga, commentaire=commentaire)
 
     @cherrypy.expose
     def manga_delete(self, id):
@@ -117,6 +163,21 @@ class MangaController:
             editeurs=db.retrieve(Editeur),
             genres=db.retrieve(Genre)
         )
+
+    @cherrypy.expose
+    def manga_statut(self, id, statut):
+        db = Database()
+        manga = db.retrieve(Manga, Manga.id, id)
+        print('######################## Statut : ',statut)
+        if statut == 'ongoing':
+            manga.statut = "En cours"
+        if statut == 'complete':
+            manga.statut = "Terminé"
+        if statut == 'pause':
+            manga.statut = "En pause"
+        print('######################## Statut : ', manga.statut)
+        db.update()
+        raise cherrypy.HTTPRedirect('/manga/'+id+'/')
 
 class ScenaristeController:
 
@@ -174,6 +235,14 @@ class TomeController:
         tome.a_acheter = True
         db.update()
         raise cherrypy.HTTPRedirect('/shopping_list/')
+
+    @cherrypy.expose
+    def tome_read(self, id_manga, id_tome):
+        db = Database()
+        tome = db.retrieveTome(id_manga, id_tome)
+        tome.lu = True
+        db.update()
+        raise cherrypy.HTTPRedirect('/')
 
     @cherrypy.expose
     def tome_sell(self, id_manga, id_tome):
@@ -258,6 +327,14 @@ class SearchController:
             genres=genres
         )
 
+class CommentaireController:
+
+    @cherrypy.expose
+    def add_commentaire(self,commentaire, titre, id):
+        db = Database()
+        commentaire = Commentaire(commentaire, titre, id)
+        db.create(commentaire, Commentaire)
+        raise cherrypy.HTTPRedirect('/manga/'+id+'/')
 
 if __name__ == '__main__':
     global_conf = {
@@ -275,11 +352,16 @@ if __name__ == '__main__':
     d.connect('default_route', '/', controller=app, action='index')
     d.connect('collection', '/collection/', controller=app, action='collection')
     d.connect('shopping_list', '/shopping_list/', controller=app, action='shopping_list')
+    d.connect('no_category', '/no_category/', controller=app, action='no_category')
+    d.connect('shopping_list_comfirm', '/shopping_list/comfirm/', controller=app, action='shopping_list_comfirm')
+
+    d.connect('commentaire_add', '/comment/add/:id/', controller=CommentaireController, action="add_commentaire")
 
     d.connect('manga_list', '/manga/', controller=MangaController, action="manga_list")
     d.connect('manga_new', '/manga/new/', controller=MangaController, action="manga_new")
     d.connect('manga_add', '/manga/add/', controller=MangaController, action="manga_add")
     d.connect('manga_detail', '/manga/:id/', controller=MangaController, action='manga_detail')
+    d.connect('manga_statut', '/manga/:id/:statut/', controller=MangaController, action='manga_statut')
     d.connect('manga_delete', '/manga/delete/:id/', controller=MangaController, action='manga_delete')
 
     d.connect('tome_new', '/tome/new/', controller=TomeController, action="tome_new")
@@ -289,6 +371,7 @@ if __name__ == '__main__':
     d.connect('tome_buy', '/manga/:id_manga/tome/buy/:id_tome', controller=TomeController, action='tome_buy')
     d.connect('tome_sell', '/manga/:id_manga/tome/sell/:id_tome', controller=TomeController, action='tome_sell')
     d.connect('tome_cart', '/manga/:id_manga/tome/cart/:id_tome', controller=TomeController, action='tome_cart')
+    d.connect('tome_read', '/manga/:id_manga/tome/read/:id_tome', controller=TomeController, action='tome_read')
 
     d.connect('scenariste_list','/scenariste/', controller=ScenaristeController, action="scenariste_list")
     d.connect('scenariste_new','/scenariste/new/', controller=ScenaristeController, action="scenariste_new")

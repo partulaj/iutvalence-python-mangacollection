@@ -5,7 +5,7 @@ STOP_RENDERING = runtime.STOP_RENDERING
 __M_dict_builtin = dict
 __M_locals_builtin = locals
 _magic_number = 10
-_modified_time = 1462615594.982963
+_modified_time = 1463041302.422036
 _enable_loop = True
 _template_filename = 'C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/View/template/editeur_new.html'
 _template_uri = 'editeur_new.html'
@@ -47,7 +47,7 @@ def render_container(context,**pageargs):
         def container():
             return render_container(context)
         __M_writer = context.writer()
-        __M_writer('\r\n<div class="container">\r\n    <form action="/editeur/add/" method="post">\r\n        <div class="form-group">\r\n            <label for="editeur">Editeur :</label>\r\n            <input type="text" class="form-control" id="editeur" name="editeur">\r\n        </div>\r\n        <input type="submit" class="btn btn-success">\r\n    </form>\r\n</div>\r\n')
+        __M_writer('\r\n<div class="container">\r\n    <form action="/editeur/add/" method="post">\r\n        <div class="form-group">\r\n            <label for="editeur">Editeur :</label>\r\n            <input type="text" class="form-control" id="editeur" name="editeur" required>\r\n        </div>\r\n        <input type="submit" class="btn btn-success">\r\n    </form>\r\n</div>\r\n')
         return ''
     finally:
         context.caller_stack._pop_frame()
@@ -55,6 +55,6 @@ def render_container(context,**pageargs):
 
 """
 __M_BEGIN_METADATA
-{"source_encoding": "utf-8", "uri": "editeur_new.html", "line_map": {"56": 50, "34": 2, "27": 0, "44": 3, "50": 3}, "filename": "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/View/template/editeur_new.html"}
+{"source_encoding": "utf-8", "filename": "C:/Users/jerem/Documents/Workspace/iutvalence-python-mangacollection/View/template/editeur_new.html", "uri": "editeur_new.html", "line_map": {"56": 50, "34": 2, "27": 0, "44": 3, "50": 3}}
 __M_END_METADATA
 """

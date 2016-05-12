@@ -106,7 +106,7 @@ class Database:
                 return obj
             return None
         else:
-            obj = self.session.query(type).all()
+            obj = self.session.query(Tome).all()
             return obj
 
     def search(self, query):
@@ -116,11 +116,3 @@ class Database:
         dessinateurs = self.session.query(Dessinateur).filter(Dessinateur.dessinateur.like('%'+query+'%')).all()
         genres = self.session.query(Genre).filter(Genre.genre.like('%'+query+'%')).all()
         return mangas, editeurs, scenaristes, dessinateurs, genres
-
-    def genreChartData(self):
-        data = self.session.query(Manga.genre,func.count(Manga.id)).group_by(Manga.genre).all()
-        return data
-
-    def editeurChartData(self):
-        data = self.session.query(Manga.editeur, func.count(Manga.id)).group_by(Manga.editeur).all()
-        return data

@@ -1,9 +1,7 @@
 from datetime import datetime
 
 from Core.Database import Database
-from Model.Commentaire import Commentaire
-from Model.Manga import Manga
-from Model.Tome import Tome
+from models import *
 
 if __name__ == "__main__":
     db = Database()
@@ -32,7 +30,7 @@ if __name__ == "__main__":
                 statut = input("Statut ?")
                 genre = input("Genre ?")
                 manga = Manga(titre,description,editeur,scenariste,dessinateur,statut,genre)
-                db.createManga(manga)
+                db.create(manga, Manga)
             if action == 2:
                 action = None
                 liste = db.retrieve(Manga)
@@ -54,11 +52,12 @@ if __name__ == "__main__":
                 liste = db.retrieve(Manga)
                 for i in liste:
                     print(i)
-                id  = input("Id manga ?")
+                id  = int(input("Id manga ?"))
                 titre  = input("Titre du commentaire manga ?")
                 commentaire  = input("Commentaire sur le manga ?")
-                comment = Commentaire(id,titre,commentaire)
+                comment = Commentaire(commentaire,titre, id)
                 db.create(comment, Commentaire)
+                action = 0
 
         if action == 2:
             print("Choisissez ce que vous voulez supprimer ?")
@@ -81,6 +80,7 @@ if __name__ == "__main__":
                     confirmation = bool(input("Voulez vous vraiment supprimer le tome {} de {} ?".format(numero, nom)))
                     if confirmation == True:
                         db.deleteTome(tome)
+                action = 0
 
             if action == 3:
                 action = None
@@ -94,6 +94,7 @@ if __name__ == "__main__":
                     confirmation = bool(input("Voulez vous vraiment supprimer le commentaire sur le manga {} ?".format(nom)))
                     if confirmation == True:
                         db.delete(commentaire, Commentaire)
+                action = 0
 
         if action == 3:
             id = input("Id du manga a modifier ?")
@@ -109,6 +110,7 @@ if __name__ == "__main__":
                 manga.genre = input("Genre ?") or manga.genre
                 db.update()
                 print(db.retrieve(Manga, Manga.id, manga.id))
+            action = 0
 
         if action == 4:
             boucle = False

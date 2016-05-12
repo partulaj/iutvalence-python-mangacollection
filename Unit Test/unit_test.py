@@ -2,7 +2,7 @@ import unittest
 
 from Core.Database import Database
 from Error.BadTypeException import BadTypeException
-from Model.Manga import Manga
+from models import *
 
 
 class Database_TestCase(unittest.TestCase):
@@ -13,10 +13,10 @@ class Database_TestCase(unittest.TestCase):
 
     def test_CreateMangaInvalidType(self):
         db = Database("../mangas.sqlite3")
-        self.assertRaises(BadTypeException,db.create, Manga,"blop")
-        self.assertRaises(BadTypeException,db.create, Manga,1)
-        self.assertRaises(BadTypeException,db.create, Manga,None)
-        self.assertRaises(BadTypeException,db.create, Manga,False)
+        self.assertRaises(BadTypeException,db.create,"blop", Manga)
+        self.assertRaises(BadTypeException,db.create,1, Manga)
+        self.assertRaises(BadTypeException,db.create,None, Manga)
+        self.assertRaises(BadTypeException,db.create,False,Manga)
 
     def test_DeleteInvalidType(self):
         db = Database("../mangas.sqlite3")

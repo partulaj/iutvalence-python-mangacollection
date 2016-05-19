@@ -4057,3 +4057,18 @@ AttributeError: 'NoneType' object has no attribute 'titre'
 [12/May/2016:16:02:49] ENGINE Started monitor thread '_TimeoutMonitor'.
 [12/May/2016:16:02:49] ENGINE Serving on http://127.0.0.1:8080
 [12/May/2016:16:02:49] ENGINE Bus STARTED
+[19/May/2016:08:00:07] ENGINE Listening for SIGTERM.
+[19/May/2016:08:00:07] ENGINE Bus STARTING
+[19/May/2016:08:00:07] ENGINE Started monitor thread '_TimeoutMonitor'.
+[19/May/2016:08:00:08] ENGINE Serving on http://127.0.0.1:8080
+[19/May/2016:08:00:08] ENGINE Bus STARTED
+[19/May/2016:11:30:35] ENGINE Listening for SIGTERM.
+[19/May/2016:11:30:35] ENGINE Bus STARTING
+[19/May/2016:11:30:35] ENGINE Started monitor thread '_TimeoutMonitor'.
+[19/May/2016:11:30:35] ENGINE Serving on http://127.0.0.1:8080
+[19/May/2016:11:30:35] ENGINE Bus STARTED
+[19/May/2016:11:54:20] ENGINE Listening for SIGTERM.
+[19/May/2016:11:54:20] ENGINE Bus STARTING
+[19/May/2016:11:54:20] ENGINE Started monitor thread '_TimeoutMonitor'.
+[19/May/2016:11:54:20] ENGINE Serving on http://127.0.0.1:8080
+[19/May/2016:11:54:20] ENGINE Bus STARTED
